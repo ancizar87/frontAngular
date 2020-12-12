@@ -1,0 +1,68 @@
+<div class="container">
+    <div class="content-detail-product" fxLayout="row wrap" fxLayoutAlign="center start" fxLayoutGap.gt-sm="1%" fxLayoutGap.gt-md="2%">
+        <div fxFlex.gt-sm="47" fxFlex="100">
+            <ngx-gallery [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
+        </div>
+        <div fxFlex.gt-sm="47" fxFlex="100">
+            <mat-card class="detail-product">
+                <mat-card-header>
+                    <div>
+                        <mat-card-title *ngIf="productoPrint.length > 0">{{productoPrint[0].nombre}}</mat-card-title>
+                        <mat-card-subtitle *ngIf="productoPrint.length > 0">{{productoPrint[0].rama}}</mat-card-subtitle>
+                    </div>
+                    <div class="example-spacer"></div>
+                    <div class="redes-detail" fxLayoutAlign="stretch" fxLayoutGap="4px">
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=URLENCODED_URL&t=TITLE" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" target="_blank" title="Share on Facebook"
+                            mat-mini-fab>
+                            <mat-icon svgIcon="facebook"></mat-icon>
+                        </a>
+                        <a href="https://www.instagram.com/?url=https://www.drdrop.co/" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" target="_blank" title="Share on Instagram" mat-mini-fab>
+                            <mat-icon svgIcon="instagram"></mat-icon>
+                        </a>
+                    </div>
+                </mat-card-header>
+                <mat-card-content *ngIf="productoPrint.length > 0">
+                    <mat-list dense>
+                        <a mat-list-item class="item-detail" [ngClass]="{'disabledLink': OutTimechangeProduct}" *ngFor="let caract of productoPrint[0].opcionCaracteristica" [routerLink]="['/productos/'+caract.codigoP]" routerLinkActive="router-link-active" (click)="invoqueProduct()">
+                            <mat-icon class="mat-18">done</mat-icon> {{caract.descripcion}}
+                        </a>
+                    </mat-list>
+                    <h4 class="price">
+                        <span>Precio: </span>
+                        <h3>{{ priceProduct | currency:'COP':'symbol-narrow' }}</h3>
+                    </h4>
+                </mat-card-content>
+                <mat-card-actions>
+                    <div fxLayout="row wrap">
+                        <mat-form-field fxFlex.xs="30" fxFlex.sm="15" fxFlex="20" appearance="outline" class="quantity">
+                            <mat-label>Cantidad</mat-label>
+                            <input matInput #cantProduct type="number" placeholder="Cantidad minima de compra" (change)="cambioValor()" [value]="quantityActual !== minQuantity ? quantityActual:minQuantity" [min]="minQuantity" [max]="maxQuantity">
+                            <span *ngIf="showMedida != false" matSuffix matTooltip="Metros">{{unitMedida}}</span>
+                            <!--<mat-error *ngIf="quantity.errors?.min">
+                                    Cantidad minima requerida {{minQuantity}}.
+                                </mat-error>
+                                <mat-error *ngIf="quantity.errors?.max">
+                                    Supera el máximo a comprar
+                                </mat-error>-->
+                        </mat-form-field>
+                        <!--<div fxLayout="row" fxLayoutAlign="center center"></div>-->
+                        <button mat-button fxFlex.xs="63" class="border-btn" (click)="sendProductCart()"><mat-icon>add_shopping_cart</mat-icon> Añadir al carrito</button>
+                        <div class="example-spacer"></div>
+                        <div class="total" fxFlex.xs="100">
+                            <span>Total:</span>
+                            <h3 *ngIf="newQuantity == (0 || null || undefined)">{{(quantityActual != minQuantity ? quantityActual:minQuantity) * priceProduct | currency:'COP':'symbol-narrow'}}</h3>
+                            <h3 *ngIf="newQuantity != (0 || null || undefined)">{{priceProduct * newQuantity | currency:'COP':'symbol-narrow'}}</h3>
+                        </div>
+
+                    </div>
+                </mat-card-actions>
+                <mat-card-footer fxLayout="column">
+                    Codigos:
+                    <mat-chip-list *ngIf="productoPrint.length > 0">
+                        <mat-chip [disabled]="OutTimechangeProduct" *ngFor="let caract of productoPrint[0].opcionCaracteristica" [routerLink]="['/productos/'+caract.codigoP]">{{caract.codigoP}}</mat-chip>
+                    </mat-chip-list>
+                </mat-card-footer>
+            </mat-card>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+.links-items{
+  margin-right: 0px !important;
+  .mat-list{
+    width: 100%;
+    .mat-list-item {
+      cursor: pointer;
+    }
+  }
+}

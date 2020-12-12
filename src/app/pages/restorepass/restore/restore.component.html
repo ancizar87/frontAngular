@@ -1,0 +1,21 @@
+<div class="cotainer" fxLayout="row wrap">
+    <mat-card fxFlex.gt-sm="35" fxFlex.gt-xs="70" fxFlex="95">
+        <mat-card-header fxLayoutAlign="center">
+            <mat-card-title>RECUPERAR CONTRASEÑA</mat-card-title>
+            <mat-card-subtitle>Bienvenido, ingrese un correo electrónico valido para restablecer su contraseña</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <form [formGroup]="restorePassForm" (ngSubmit)="onSubmit()" fxLayout="column">
+                <mat-form-field appearance="outline">
+                    <mat-label>Correo</mat-label>
+                    <input matInput formControlName="email">
+                    <mat-error *ngIf="restorePassForm.get('email').errors?.required">El campo Correo es requerido</mat-error>
+                    <mat-error *ngIf="restorePassForm.get('email').errors?.email">Correo no valido</mat-error>
+                </mat-form-field>
+
+                <button mat-button type="submit" [disabled]="!restorePassForm.valid || submitted">Enviar</button>
+                <br>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>

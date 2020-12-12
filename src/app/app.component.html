@@ -1,0 +1,192 @@
+<div class="content-navbar">
+    <mat-toolbar color="primary" class="navbar-menu animated fast" #stickyMenu [ngClass]="[sticky == true ? 'sticky':'']">
+        <mat-toolbar-row class="container">
+            <div fxLayout="row wrap" fxLayoutAlign="start center" style="width: 100%;">
+                <div class="content-logo" fxFlex.xs="50" fxFlex.gt-xs="30" fxFlex.gt-sm="25" [fxFlex.gt-md]="[sticky==true ? '15': '30']" fxLayoutAlign="start center">
+                    <a routerLink="/" fxLayoutAlign.xs="center center"><img class="logo" src="assets/images/conecta-white.png" alt="conecta con ingenieria" /></a>
+                    <div class="float-address">
+                        <mat-card>
+                            <div fxLayout="row" fxLayoutAlign="stretch stretch">
+                                <div fxFlex="40" class="conten-logo-card" fxLayoutAlign="center center">
+                                    <div fxLayout="column">
+                                        <img class="logo" src="assets/images/conecta-white.png" alt="conecta con ingenieria" />
+                                        <p>Soluciones en servicios y suministros eléctricos, telecomunicaciones y CCTV</p>
+                                    </div>
+                                </div>
+                                <div fxFlex="60">
+                                    <mat-list>
+                                        <mat-list-item href="https://goo.gl/maps/B2SRAr7GPG2z6S548" target="_blank">
+                                            <mat-icon class="white-icon" svgIcon="home"></mat-icon>
+                                            <h4 mat-line>Cra. 45A # 129A - 04</h4>
+                                        </mat-list-item>
+                                        <mat-list-item>
+                                            <mat-icon class="white-icon" svgIcon="phone"></mat-icon>
+                                            <h4 mat-line>774 5082</h4>
+                                        </mat-list-item>
+                                        <mat-list-item>
+                                            <mat-icon class="white-icon" svgIcon="cel"></mat-icon>
+                                            <h4 mat-line>311 2403535</h4>
+                                        </mat-list-item>
+                                        <mat-list-item>
+                                            <mat-icon class="white-icon" svgIcon="arroba"></mat-icon>
+                                            <h4 mat-line>conectaconingenieria@gmail.com</h4>
+                                        </mat-list-item>
+                                        <mat-list-item>
+                                            <mat-icon class="white-icon" svgIcon="arroba"></mat-icon>
+                                            <h4 mat-line>lightconingenieriasas@gmail.com</h4>
+                                        </mat-list-item>
+                                    </mat-list>
+                                </div>
+                            </div>
+                        </mat-card>
+
+                    </div>
+                </div>
+
+                <!--<span class="example-spacer"></span>-->
+                <div fxHide.xs fxHide.sm fxHide.md [fxFlex]="[sticky==true ? '85': '70']">
+
+                    <div class="nav-contact" fxLaoyut="end center" [fxHide]="sticky">
+                        <ul fxLayout="row" fxLayoutGat="10px" fxLayoutAlign="end center">
+                            <li fxLayout="row" fxLayoutGat="10px" fxLayoutAlign="center center">
+                                <a class="boton" mat-button href="https://wa.link/50ny9d" target="_blank">
+                                    <mat-icon class="whsapp" svgIcon="whatsapp"></mat-icon>
+                                    311 240 3535
+                                </a>
+                            </li>
+                            <li fxLayout="row" fxLayoutGat="10px" fxLayoutAlign="center center">
+
+                                <mat-form-field class="reset-input search-style" appearance="outline">
+                                    <mat-label>Buscar productos</mat-label>
+                                    <input [formControl]="searchCtrl" type="text" aria-label="Number" matInput [matAutocomplete]="auto">
+                                    <mat-icon matSuffix>search</mat-icon>
+                                    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                                        <mat-option *ngIf="isLoading" class="is-loading">
+                                            <mat-spinner diameter="50"></mat-spinner>
+                                        </mat-option>
+                                        <ng-container *ngIf="!isLoading">
+                                            <mat-option *ngFor="let item of options | async; let index = index" [value]="item.descripcion">
+                                                <a routerLink="/productos/{{item.codigoP}}" style="color:#333 !important">
+                                          {{ item.descripcion | titlecase}}
+                                        </a>
+                                            </mat-option>
+                                        </ng-container>
+                                    </mat-autocomplete>
+                                </mat-form-field>
+                            </li>
+                            <li *ngIf="showMenuProfile == false">
+                                <button mat-mini-fab class="sin-color" routerLink="login" routerLinkActive="active">
+                                    <mat-icon>person</mat-icon>
+                                </button>
+                            </li>
+                            <li *ngIf="isLoggedIn$ | async">
+                                <button mat-mini-fab class="sin-color" [matMenuTriggerFor]="profile">
+                                  <mat-icon>person</mat-icon>
+                              </button>
+                                <mat-menu #profile="matMenu">
+                                    <button mat-menu-item [routerLink]="['/user-panel']">Mi Cuenta</button>
+                                    <button mat-menu-item (click)="logout()">Cerrar sesión</button>
+                                </mat-menu>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <ul class="top-menu" fxLayoutAlign="end center">
+                        <li>
+                            <a mat-button routerLink="home" routerLinkActive="active">Inicio</a>
+                            <a mat-button [matMenuTriggerFor]="productos">Productos</a>
+                            <mat-menu #productos="matMenu">
+                                <a mat-menu-item routerLink="/productos" routerLinkActive="active"> <b>Catálogo</b> </a>
+                                <a mat-menu-item routerLink="/promocion" routerLinkActive="active"> <b>Promociones</b> </a>
+                            </mat-menu>
+                            <a mat-button routerLink="/blog" routerLinkActive="active">Blog</a>
+                            <a mat-button [matMenuTriggerFor]="informacion">Información</a>
+                            <mat-menu #informacion="matMenu">
+                                <a mat-menu-item routerLink="/nosotros" routerLinkActive="active"> <b>Nosotros</b> </a>
+                                <a mat-menu-item routerLink="/como-comprar" routerLinkActive="active"> <b>Como Comprar</b> </a>
+                                <a mat-menu-item routerLink="envios" routerLinkActive="active"> <b>Envios y Devoluciones</b> </a>
+                                <a mat-menu-item routerLink="terminos" routerLinkActive="active"> <b>Términos y Condiciones</b> </a>
+                                <a mat-menu-item routerLink="/politica" routerLinkActive="active"> <b>Politica de Tratamiento de Datos</b> </a>
+                            </mat-menu>
+                            <a mat-button routerLink="/contacto" routerLinkActive="active">Contácto</a>
+                            <a mat-button>Servicios</a>
+                            <a mat-button [routerLink]="showMenuProfile == false ? ['/registeruser']: ['/user-panel']" routerLinkActive="active">Mi cuenta</a>
+                            <a mat-button routerLink="/carrito" matTooltip="Ir al carrito">
+
+                                <mat-icon [matBadge]="cantidadProductos" matBadgeColor="warn">shopping_cart</mat-icon>
+                            </a>
+                            <button mat-mini-fab>
+                                <mat-icon>search</mat-icon>
+
+                            </button>
+
+
+                            <button *ngIf="showMenuProfile == false" mat-mini-fab class="sin-color" routerLink="login" routerLinkActive="active">
+                                <mat-icon>person</mat-icon>
+                            </button>
+                            <ng-container *ngIf="isLoggedIn$ | async">
+                                <button mat-mini-fab class="sin-color" [matMenuTriggerFor]="profile">
+                                  <mat-icon>person</mat-icon>
+                              </button>
+                                <mat-menu #profile="matMenu">
+                                    <button mat-menu-item [routerLink]="['/user-panel']">Mi Cuenta</button>
+                                    <button mat-menu-item (click)="logout()">Cerrar sesión</button>
+                                </mat-menu>
+                            </ng-container>
+                        </li>
+                    </ul>
+
+                </div>
+                <div fxFlex.xs="50" fxFlex.gt-xs="70" fxFlex.gt-sm="75" fxLayoutGap.xs="5px" fxLayoutAlign="end center">
+                    <a mat-mini-fab routerLink="/carrito" fxHide.gt-md *ngIf="cantidadProductos > 0" class="reset-color animated zoomIn faster" matTooltip="Ir al carrito">
+                        <mat-icon [matBadge]="cantidadProductos" matBadgeColor="warn">shopping_cart</mat-icon>
+                    </a>
+                    <button (click)="sidenav.toggle()" class="reset-color" fxHide.gt-md mat-mini-fab>
+                        <mat-icon>menu</mat-icon>
+                    </button>
+                </div>
+            </div>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</div>
+<mat-sidenav-container class="example-container">
+    <mat-sidenav #sidenav class="sidenav-menu" #sidenav mode="over" fixedInViewport="true">
+        <mat-toolbar class="bg-toolbar-nav">
+            <img class="logo" src="assets/images/conecta-white.png" alt="conecta con ingenieria" style="width: 100%;" />
+        </mat-toolbar>
+        <mat-list role="list">
+            <mat-list-item matRipple role="listitem" *ngIf="showMenuProfile == false" routerLink="login" (click)="sidenav.toggle()">Iniciar sesión</mat-list-item>
+            <mat-list-item matRipple role="listitem" *ngIf="cantidadProductos > 0" routerLink="/carrito" (click)="sidenav.toggle()" matTooltip="Ir al carrito">
+                Carrito de compras
+                <mat-icon [matBadge]="cantidadProductos" matBadgeColor="warn">shopping_cart</mat-icon>
+            </mat-list-item>
+            <mat-divider *ngIf="cantidadProductos > 0"></mat-divider>
+            <mat-list-item matRipple role="listitem" routerLink="home" (click)="sidenav.toggle()" routerLinkActive="active">Inicio</mat-list-item>
+            <mat-list-item matRipple [matMenuTriggerFor]="menuProductos" routerLinkActive="active" role="listitem">Productos</mat-list-item>
+            <mat-menu #menuProductos="matMenu">
+                <button routerLink="/productos" (click)="sidenav.toggle()" mat-menu-item>Catagolo</button>
+                <button routerLink="/promocion" (click)="sidenav.toggle()" mat-menu-item>Promociones</button>
+            </mat-menu>
+            <!--<mat-list-item role="listitem"><a mat-button routerLink="/promocion" (click)="sidenav.toggle()" routerLinkActive="active">Promociones</a></mat-list-item>-->
+            <mat-list-item routerLink="/blog" (click)="sidenav.toggle()" routerLinkActive="active" role="listitem">Blog de noticias</mat-list-item>
+            <mat-list-item routerLink="/nosotros" (click)="sidenav.toggle()" routerLinkActive="active" role="listitem">Nosotros</mat-list-item>
+            <mat-list-item role="listitem" routerLink="/como-comprar" (click)="sidenav.toggle()" routerLinkActive="active">Como Comprar</mat-list-item>
+            <mat-list-item role="listitem" routerLink="envios" (click)="sidenav.toggle()" routerLinkActive="active">Envios y Devoluciones</mat-list-item>
+            <mat-list-item role="listitem" routerLink="terminos" (click)="sidenav.toggle()">Terminos y Condiciones</mat-list-item>
+            <mat-list-item role="listitem" routerLink="/politica" (click)="sidenav.toggle()" routerLinkActive="active">Politica de Tratamiento de Datos</mat-list-item>
+            <mat-list-item role="listitem" routerLink="/contacto" (click)="sidenav.toggle()" routerLinkActive="active">Contácto</mat-list-item>
+            <mat-list-item role="listitem" (click)="sidenav.toggle()">Servicos</mat-list-item>
+            <mat-list-item role="listitem" [routerLink]="showMenuProfile == false ? ['/registeruser']: ['/user-panel']" (click)="sidenav.toggle()" routerLinkActive="active">Mi cuenta</mat-list-item>
+            <mat-list-item role="listitem" (click)="logout(); sidenav.toggle()" *ngIf="isLoggedIn$ | async">Cerrar sesión</mat-list-item>
+        </mat-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+<app-footer></app-footer>
+<div id="whatsapp">
+    <a href="https://wa.link/50ny9d" target="_blank">
+        <img src="assets/images/whatsapp.png" title="Escríbenos por Whastapp" alt="Escríbenos por Whastapp">
+    </a>
+</div>

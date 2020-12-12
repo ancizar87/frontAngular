@@ -1,0 +1,70 @@
+<div
+  fxLayout="row wrap"
+  fxLayoutAlign="start center"
+  style="width: 100%;"
+>
+  <mat-toolbar-row fxFlex="100">
+    <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="start center">
+      <mat-spinner diameter="20" *ngIf="orden == undefined"></mat-spinner><h3>Ordenes de compra</h3>
+    </div>
+  </mat-toolbar-row>
+
+  <mat-accordion fxFlex="100">
+    <mat-expansion-panel
+      [disabled]="disableEXpand"
+      (opened)="panelOpenState = true"
+      (closed)="panelOpenState = false"
+      *ngFor="let order of orden"
+    >
+      <mat-expansion-panel-header (click)="products(order.id)">
+        <mat-panel-title
+          fxLayout="row"
+          fxLayoutAlign="start center"
+          class="order-nro"
+        >{{order.invoice_no}}</mat-panel-title>
+
+        <mat-panel-description
+          fxLayout="row"
+          fxLayoutGap="20px"
+          fxLayoutAlign="end center"
+        >
+          <span>
+            {{order.precio_total | currency: "COP":"$":"1.0-0"}}
+          </span>
+
+          <button
+            mat-stroked-button="mat-stroked-button"
+            disabled="disabled"
+            [ngClass]="{'activeSuccess': order.estado == 'aprobado'}"
+          >{{order.estado}}</button>
+
+          <!-- Currently I am {{panelOpenState ? 'open' : 'closed'}} -->
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <mat-list>
+        <div mat-subheader="mat-subheader">
+          <div fxLayout="row wrap" fxLayoutAlign="space-between center" style="width: 100%">
+            <mat-spinner diameter="20" *ngIf="!itemsOrder"></mat-spinner>
+            <span>Productos</span>
+            <span fxHide.gt-xs="true" fxLayout="column" fxLayoutAlign="start start">
+              <sub>orden Nro:</sub>
+              {{order.invoice_no}}
+            </span>
+          </div>
+        </div>
+        <mat-divider fxHide.gt-xs="true"></mat-divider>
+        <mat-list-item *ngFor="let items of itemsOrder">
+          <div fxLayout="row wrap" fxLayoutAlign="space-between center" fxLayoutGap.gt-md="10px grid" style="width: 100%;">
+            <div fxFlex.gt-sm="25" fxFlex="50" class="nombre-producto"><a [routerLink]="['/productos', items.codigo]" [matTooltip]="items.nombre"><mat-spinner diameter="20" *ngIf="!items.nombre"></mat-spinner> {{items.nombre}}</a></div>
+            <div fxFlex.gt-sm="25" fxFlex="50" fxLayoutAlign.md="end center" fxLayoutAlign.sm="end center" fxLayoutAlign.xs="end center">Cantidad: {{items.cantidad}}</div>
+            <div fxFlex.gt-sm="25" fxFlex="50">Precio unidad: {{items.precio | currency: "COP":"$":"1.0-0"}}</div>
+            <div fxFlex.gt-sm="25" fxFlex="50" fxLayoutAlign="end center">Total: {{items.cantidad * items.precio | currency: "COP":"$":"1.0-0"}}</div>
+          </div>
+          <mat-divider></mat-divider>
+        </mat-list-item>
+
+      </mat-list>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>

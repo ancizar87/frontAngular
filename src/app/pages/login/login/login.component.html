@@ -1,0 +1,70 @@
+<div
+  class="container"
+  fxLayout="row wrap"
+  fxLayoutAlign="center center"
+>
+  <mat-card
+    fxFlex.gt-sm="35"
+    fxFlex.gt-xs="70"
+    fxFlex="95"
+  >
+    <mat-card-header fxLayoutAlign="center">
+      <mat-card-title>INICIAR SESIÓN</mat-card-title>
+      <mat-card-subtitle>Bienvenido, el ingreso es necesario para realizar efectivamente sus compras</mat-card-subtitle>
+    </mat-card-header>
+
+    <form
+      [formGroup]="loginForm"
+      (ngSubmit)="onSubmitlogin()"
+    >
+      <mat-card-content>
+        <mat-error *ngIf="loginInvalid">
+          The username and password were not recognised
+        </mat-error>
+
+        <mat-form-field
+          class="full-width-input"
+          appearance="outline"
+        >
+          <input
+            matInput="matInput"
+            placeholder="Email"
+            formControlName="email"
+          >
+
+          <mat-error *ngIf="errorHandling('email', 'required')">Correo no valido</mat-error>
+        </mat-form-field>
+
+        <mat-form-field
+          class="full-width-input"
+          appearance="outline"
+        >
+          <input
+            matInput="matInput"
+            type="password"
+            placeholder="Password"
+            formControlName="password"
+          >
+
+          <mat-error *ngIf="errorHandling('password', 'required')">
+            La contraseña es requerida
+          </mat-error>
+        </mat-form-field>
+      </mat-card-content>
+
+      <mat-card-actions fxLayout="column">
+        <div fxLayout="row" fxLayoutAlign="center center">
+          <button [disabled]="errorHandling('password', 'required') || errorHandling('email', 'required') || enviando"
+            type="submit"
+            mat-raised-button="mat-raised-button"
+            color="primary"
+          >Ingresar</button>
+        </div>
+        <br/>
+        <a mat-button routerLink="/restore" routerLinkActive="active">Reestablecer contraseña aquí</a>
+        <br/>
+        <a [routerLink]="['/registeruser']">Registrarme para comprar</a>
+      </mat-card-actions>
+    </form>
+  </mat-card>
+</div>

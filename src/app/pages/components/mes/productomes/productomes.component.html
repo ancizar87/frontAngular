@@ -1,0 +1,36 @@
+<div class="container">
+
+    <div class="image-arrow">
+        <img src="assets/images/arrow.png">
+    </div>
+</div>
+<div class="container space-bottom">
+    <div fxLayout="row wrap">
+        <h3 class="title-content" fxFlex="100%">Productos</h3>
+        <div fxFlex="100">
+          <div fxLayout="row" fxLayoutGap="5px">
+            <mat-divider fxFlex="3" class="divider-title"></mat-divider>
+            <mat-divider fxFlex="10px" class="divider-title"></mat-divider>
+            <mat-divider fxFlex="10" class="divider-title"></mat-divider>
+          </div>
+        </div>
+
+    </div>
+
+    <ngu-carousel #myCarousel *ngIf="allProducts !== undefined" [inputs]="carouselProduct" [dataSource]="allProducts">
+
+        <ngu-tile *nguCarouselDef="let producto; let i = index">
+          <app-productmin class="animated zoomIn faster" [data]="producto" fxFlex="100"></app-productmin>
+        </ngu-tile>
+
+        <button mat-button NguCarouselPrev class="leftRs">
+        <mat-icon>keyboard_arrow_left</mat-icon>
+    </button>
+        <button mat-button NguCarouselNext class="rightRs">
+        <mat-icon>keyboard_arrow_right</mat-icon>
+    </button>
+        <!-- <ul class="myPoint" NguCarouselPoint>
+        <li *ngFor="let i of myCarousel.pointNumbers; let i = index" [class.active]="i==myCarousel.activePoint" (click)="myCarousel.moveTo(i)" [style.background]="'url(' + carouselTileItems[i] + ')'"></li>
+    </ul>-->
+    </ngu-carousel>
+</div>

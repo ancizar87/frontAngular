@@ -1,0 +1,40 @@
+<mat-card class="example-card card-product">
+  <mat-card-header>
+    <mat-card-title>{{data.nombre}}</mat-card-title>
+  </mat-card-header>
+
+  <div class="image-card">
+    <img [src]="data.imagenes[0].image">
+  </div>
+
+  <mat-card-content>
+    {{data.opcionCaracteristica[0].descripcion}}
+  </mat-card-content>
+
+  <mat-chip-list class="code-list">
+    <mat-chip>
+      {{data.opcionCaracteristica[0].codigoP}}
+    </mat-chip>
+  </mat-chip-list>
+
+  <mat-card-actions
+    fxLayout="row"
+    fxLayoutAlign="space-between center"
+  >
+    <a
+      [routerLink]="['/productos', data.opcionCaracteristica[0].codigoP]"
+      routerLinkActive="router-link-active"
+      mat-button="mat-button"
+      class="border-btn"
+    >Ver producto</a>
+
+    <button
+      mat-raised-button="mat-raised-button"
+      matTooltip="Añadir al carrito"
+      mat-button="mat-button"
+      (click)="addCard(data)"
+    >
+      <mat-icon class="mat-18">add_shopping_cart</mat-icon>
+    </button>
+  </mat-card-actions>
+</mat-card>

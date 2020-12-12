@@ -1,0 +1,55 @@
+.divider-title {
+    border-top-width: 4px !important;
+    margin-bottom: 15px !important;
+    border-radius: 8px;
+    background-color: #ffffff;
+}
+
+.space-bottom-f {
+    padding-bottom: 20px;
+}
+
+footer {
+    background-color: #000;
+    padding-top: 30px;
+    a {
+        color: white;
+        margin-right: 10px;
+    }
+    p {
+        color: white;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    h4 {
+        color: white;
+    }
+    ul {
+        padding-left: 10px;
+        padding-right: 10px;
+        li {
+            line-height: 30px;
+            color: white;
+            mat-icon {
+                color: white !important;
+                font-size: 1.1em !important;
+                margin-right: 10px;
+            }
+        }
+    }
+}
+
+.mg-top {
+    margin-top: 10px;
+}
+
+.redes {
+    mat-icon {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+.logo-footer {
+    width: 240px;
+}

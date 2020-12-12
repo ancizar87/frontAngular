@@ -1,0 +1,106 @@
+<div class="banner-interno" fxLayout.gt-sm="row" fxLayout="column" fxLayoutAlign="center center" fxLayoutAlign.gt-sm="space-between center">
+    <div class="container">
+        <div fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign.sm="center center" fxLayoutAlign.xs="center center">
+            <h1>CONTACTO</h1>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div fxLayout="row wrap" fxLayoutAlign="center start" fxLayoutGap.gt-md="2%">
+        <div fxFlex="100" fxFlex.xs="100" fxFlex.gt-md="75">
+            <div fxLayout="row wrap" fxLayoutGap.gt-xs="30px">
+                <div fxFlex="50" fxFlex.xs="100" fxFlex.gt-md="50">
+                    <div class="titulo-catalogo">
+                        <mat-toolbar>
+                            <span>ENCUENTRANOS</span>
+                        </mat-toolbar>
+                    </div>
+                    <mat-panel-description>
+                        <mat-list>
+                            <mat-list-item>
+                                <p mat-line>Cra. 45A # 129A - 04 Local 1</p>
+                            </mat-list-item>
+                            <mat-list-item>
+                                <p mat-line>Telefono: 774 5082</p>
+                            </mat-list-item>
+                            <mat-list-item>
+                                <p mat-line>Celular: 311 2403535</p>
+                            </mat-list-item>
+                            <mat-list-item>
+                                <p mat-line>O escribenos</p>
+                            </mat-list-item>
+                            <mat-list-item>
+                                <p mat-line>conectaconingenieria@gmail.com</p>
+                            </mat-list-item>
+                            <mat-list-item>
+                                <p mat-line>lightconingenieriasas@gmail.com</p>
+                            </mat-list-item>
+                        </mat-list>
+                    </mat-panel-description>
+                </div>
+                <div class="titulo-catalogo" fxFlex="45" fxFlex.xs="100" fxFlex.gt-md="45">
+                    <mat-toolbar>
+                        <span>HORARIO DE ATENCIÓN</span>
+                    </mat-toolbar>
+                    <mat-list>
+                        <mat-list-item>
+                            <p mat-line>
+                                Lunes a viernes de 8:00Am a 6:00PM
+                            </p>
+                        </mat-list-item>
+                        <mat-list-item>
+                            <p mat-line>
+                                Sábados de 8:00Am a 4:00PM
+                            </p>
+                        </mat-list-item>
+                    </mat-list>
+                </div>
+            </div>
+            <div class="maps-content">
+                <div fxFlex="100">
+                    <div fxLayout="row wrap">
+                        <agm-map [latitude]="lat" [zoom]="zoom" [longitude]="lng">
+                            <agm-marker [latitude]="lat" [longitude]="lng" (markerClick)="clickedMarker()"></agm-marker>
+                        </agm-map>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+            <p style="font-size:25px">Si quiere obtener más información sobre algún producto o solicitar una cotización puede escribirnos a nuestro formulario clientes y requerir la informacion que necesites. Tenga en cuenta indicar la especificion completa del producto que quiera
+                solicitar.
+            </p>
+            <br>
+            <br>
+            <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" fxLayout="column">
+                <mat-form-field appearance="outline">
+                    <mat-label>Nombres</mat-label>
+                    <input matInput formControlName="nombres">
+                    <mat-error *ngIf="errorHandling('nombres', 'required')">El campo Nombres es requerido</mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Email</mat-label>
+                    <input matInput formControlName="email">
+                    <mat-error *ngIf="errorHandling('email', 'required')">El campo Email es requerido</mat-error>
+                    <mat-error *ngIf="errorHandling('email', 'required')">Correo no valido</mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Telefono</mat-label>
+                    <input matInput formControlName="telefono">
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Mensaje</mat-label>
+                    <textarea matInput formControlName="message"></textarea>
+                    <mat-error *ngIf="errorHandling('message', 'required')">El campo Mensaje es requerido</mat-error>
+                </mat-form-field>
+
+                <button mat-button [disabled]="!contactForm.valid || submitted">Enviar</button>
+                <br>
+                <br>
+            </form>
+        </div>
+    </div>
+</div>

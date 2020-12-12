@@ -1,0 +1,27 @@
+<div class="cotainer" fxLayout="row wrap">
+    <mat-card fxFlex.gt-sm="35" fxFlex.gt-xs="70" fxFlex="95">
+        <mat-card-header fxLayoutAlign="center">
+            <mat-card-title>Nueva Contraseña</mat-card-title>
+            <mat-card-subtitle>Ingrese su nueva contraseña</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <form class="example-form" [formGroup]="form" (ngSubmit)="onSubmit()" fxLayout="column">
+            <p>
+              <mat-form-field appearance="outline">
+                <mat-label>Nueva contraseña</mat-label>
+                <input matInput type="password" placeholder="password" formControlName="password" [errorStateMatcher]="passwordErrorMatcher">
+                <mat-error>Error: {{ getErrorMessage('password') }}</mat-error>
+              </mat-form-field>
+            </p>
+            <p>
+              <mat-form-field appearance="outline">
+                <mat-label>Confirmar contraseña</mat-label>
+                <input matInput type="password" placeholder="password" formControlName="confirm" [errorStateMatcher]="confirmErrorMatcher">
+                <mat-error>Error: {{ getErrorMessage('confirm') }}</mat-error>
+              </mat-form-field>
+            </p>
+            <button mat-button type="submit" [disabled]="!form.valid || submitted">Enviar</button>
+          </form>
+        </mat-card-content>
+    </mat-card>
+</div>

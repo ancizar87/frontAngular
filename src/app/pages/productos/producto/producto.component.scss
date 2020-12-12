@@ -1,0 +1,16 @@
+.links-items{
+  margin-right: 0px !important;
+  .mat-list{
+    width: 100%;
+    .mat-list-item {
+      cursor: pointer;
+    }
+  }
+}
+
+.fixedLeftMenu{
+  @media(min-width:1280px) {
+    position: fixed;
+    top: 64px;
+  }
+}

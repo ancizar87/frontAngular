@@ -1,0 +1,26 @@
+<div class="banner-interno" fxLayout.gt-sm="row" fxLayout="column" fxLayoutAlign="center center" fxLayoutAlign.gt-sm="space-between center">
+    <div class="container">
+        <div fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign.sm="center center" fxLayoutAlign.xs="center center">
+            <h1>Términos y Condiciones</h1>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap.gt-md="2%">
+        <div class="border" fxFlex="90" fxFlex.xs="90" fxFlex.gt-md="73">
+            <div fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap.gt-xs="30px">
+                <div fxFlex="100" *ngIf="allterminos[0] !== undefined" fxFlex.xs="100" fxFlex.gt-md="100">
+                    <div class="titulo-catalogo">
+                        <h2>
+                            {{allterminos[0].title}}
+                        </h2>
+                        <br>
+                        <br>
+                        <div [innerHTML]="allterminos[0].content | SafeHtml"></div>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

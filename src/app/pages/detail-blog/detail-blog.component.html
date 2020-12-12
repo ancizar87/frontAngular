@@ -1,0 +1,29 @@
+<div *ngIf="dataDetail !== undefined">
+  <div class="banner-interno" [ngClass]="{'open-banner':dataDetail['image_banner']}" [style.background-image]="'url(' + url+dataDetail['image_banner'] + ')'" fxLayout="column" fxLayoutAlign="end end" fxLayoutAlign.gt-sm="end end">
+    <div class="full-content">
+      <div class="container">
+        <div fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign.sm="center end" fxLayoutAlign.xs="center end">
+          <mat-toolbar>
+            <mat-toolbar-row>
+              <h1>{{dataDetail.title}}</h1>
+              <span class="example-spacer"></span>
+              <div class="author">
+                <div [matTooltip]="'Publicado por: '+dataDetail.author" fxLayout="row" fxLayoutAlign="end center">
+                  <mat-icon class="example-icon" aria-hidden="false">person</mat-icon><span>{{dataDetail.author}}</span>
+                </div>
+              </div>
+            </mat-toolbar-row>
+          </mat-toolbar>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="padding-texto" fxLayout="row" fxLayoutAlign="center start">
+      <div fxFlex="90">
+        <div [innerHTML]="contentDetail | SafeHtml"></div>
+      </div>
+    </div>
+  </div>
+</div>

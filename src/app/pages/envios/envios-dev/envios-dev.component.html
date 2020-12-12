@@ -1,0 +1,273 @@
+<div class="banner-interno" fxLayout.gt-sm="row" fxLayout="column" fxLayoutAlign="center center" fxLayoutAlign.gt-sm="space-between center">
+    <div class="container">
+        <div fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign.sm="center center" fxLayoutAlign.xs="center center">
+            <h1>Envios y Devoluciones</h1>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div fxLayout="row wrap" fxLayoutAlign="center start" fxLayoutGap.gt-md="2%">
+        <div fxFlex="98" fxFlex.gt-md="23" class="filters-left">
+            <mat-accordion>
+                <mat-expansion-panel [expanded]="expand" [disabled]="expand" #mep="matExpansionPanel">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            INFORMACION
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <mat-panel-description>
+                        <mat-list>
+                            <mat-list-item (click)="mep.expanded = this.hideExp; scroll(ventas)">
+                                <p mat-line>Ventas</p>
+                            </mat-list-item>
+                            <mat-list-item (click)="mep.expanded = this.hideExp; scroll(garantias)">
+                                <p mat-line>Garantias</p>
+                            </mat-list-item>
+                            <mat-list-item (click)="mep.expanded = this.hideExp; scroll(envios)">
+                                <p mat-line>Envios</p>
+                            </mat-list-item>
+                            <mat-list-item (click)="mep.expanded = this.hideExp; scroll(devoluciones)">
+                                <p mat-line>Devoluciones</p>
+                            </mat-list-item>
+                            <mat-list-item (click)="mep.expanded = this.hideExp; scroll(anexos)">
+                                <p mat-line>Anexos y Preguntas Frecuentes</p>
+                            </mat-list-item>
+                        </mat-list>
+                    </mat-panel-description>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+        <div #ventas class="border" fxFlex="100" fxFlex.xs="100" fxFlex.gt-md="73">
+            <div fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap.gt-xs="30px">
+                <div fxFlex="100" fxFlex.xs="100" fxFlex.gt-md="100">
+                    <div class="titulo-catalogo">
+                        <mat-toolbar>
+                            <span>VENTAS</span>
+                        </mat-toolbar>
+                    </div>
+                    <br>
+                    <br>
+                    <ul>
+                        <li>
+                            <b>1.1.</b> Horarios de atención al público: lunes a viernes de 8:00am a 18:00pm, sábados de 8:00am a 16:00pm. El sitio web estará habilitado las 24h de lunes a domingo. Las solicitudes e inquietudes que surjan por este medio,
+                            serán atendidas en los horarios de atención al público; lunes a viernes de 8:00am a 18:00pm, sábados de 8:00am a 16:00pm.
+                        </li>
+                        <br>
+                        <br>
+                        <li>
+                            <b>1.2.</b> Se respetarán los precios de venta de cada uno de nuestros productos, los cuales se informarán directamente en el punto de venta, vía telefónica, WhatsApp o en nuestro sitio web.
+                        </li>
+                        <br>
+                        <br>
+                        <li>
+                            <b>1.3.</b> Lightcon Ingeniería SAS se reserva el derecho de actualizar su lista de precios sin previo aviso.
+                        </li>
+                    </ul>
+                    <br>
+                    <br>
+                    <div #garantias class="titulo-catalogo">
+                        <mat-toolbar>
+                            <span>GARANTIAS</span>
+                        </mat-toolbar>
+                    </div>
+                    <br>
+                    <br>
+                    <ul>
+                        <li>
+                            <b>2.1.</b> Todos los equipos que se describen en el presente documento, cuentan con garantía que se cubre solo por defectos de fabricación. excepto cuando se especifique otra disposición.
+                        </li>
+                        <br>
+                        <li>
+                            <b>2.2.</b> Horarios: se reciben y se entregan garantias de lunes a viernes de 8:30 am a 12:00, de 14:00 a 17:00 y sábados de 9:00 a 12:30 sin excepción.
+                        </li>
+                        <br>
+                        <li>
+                            <b>2.3.</b> Todos los productos adquiridos en nuestro punto de venta o en nuestro sitio web, tienen diferentes tiempos de garantía, y los cuales serán informados al momento de adquirirlos. Si por algún caso no es informado
+                            Lightcon ingeniería SAS, autoriza al cliente para solicitar por escrito dicho tiempo de garantía.
+                        </li>
+                        <br>
+                        <li>
+                            <b>2.4.</b> 4 Las garantías únicamente se atenderán por el personal de servicio técnico de la compañía.
+                        </li>
+                        <br>
+                        <li>
+                            <b>2.5.</b> Las copias de seguridad de la información de todos los equipos son responsabilidad del comprador. No se garantizará la integridad de la información en programación de centrales o configuración de los datos almacenados
+                            tales como videos, fotografías, huellas dactilares, números de tarjetas o cualquier otra información. En base a lo anterior el comprador debe recopilar la información antes de entregar el equipo por garantía.
+                        </li>
+                        <br>
+                        <li>
+                            <b>2.6.</b> Una vez el cliente detecte una falla o mal funcionamiento del equipo, deberá enviarlo para su revisión en el menor tiempo posible.
+                        </li>
+                        <br>
+                        <li>
+                            <b>2.7.</b> La manipulación y/o adulteración de los sellos o seriales anulará la garantía.
+                        </li>
+                        <br>
+                        <li>
+                            <b>2.8.</b> La garantía no cubre golpes, averías, quemaduras ni sobre voltajes causados por manejo y/o conexión del equipo, diferente a la indicada en el manual de instrucciones del producto.
+                        </li>
+                        <br>
+                        <li>
+                            <b>2.9.</b> El tiempo de respuesta de las garantias por parte de Lightcon Ingeniería SAS, será como mínimo de cinco (5) días hábiles contados a partir del siguiente día hábil de haber sido recibido. en algunos casos el tiempo
+                            puede aumentar y será informado oportunamente al cliente.
+                        </li>
+                        <br>
+                        <li>
+                            <b>2.10.</b> Lightcon Ingeniería SAS reconoce la garantía de los equipos adquiridos a través de venta directa en punto de venta o sitio web.
+                        </li>
+                        <br>
+                        <li>
+                            <b>2.11.</b> Si después de treinta (30) días calendario de reparado el equipo no es retirado, se cobrará un bodegaje de $1.000 pesos diarios. Cuando el valor del bodegaje supere el valor del equipo en reparación, la empresa
+                            considerara el equipo como abandonado.
+                        </li>
+                        <br>
+                        <li>
+                            <b>2.12.</b> Las partes o repuestos que se utilicen para realizar la reparación del equipo, contarán con una garantía de noventa (90) días calendario.
+                        </li>
+                        <br>
+                        <li>
+                            <b>2.13.</b> La revisión técnica o diagnostico tiene un costo de $30.000 + iva, restaurar valores de fábrica $35.000 + iva, estos valores se cobran a los clientes que tienen productos por fuera de la garantía, si el cliente
+                            autoriza cualquier tipo de reparación el costo por revisión no se cobrará, el valor de los repuestos o partes que sean necesarias para dicha reparación tendrán un costo adicional y este se informara al cliente para su correspondiente
+                            autorización; dicha reparación tendrá garantía de noventa (90) días calendario, entendiendo que esta no cubre el aparato como un todo, sino únicamente los daños reparados y repuestos cambiados.
+                        </li>
+                        <br>
+                        <li>
+                            <b>2.14.</b> Si después de sesenta (60) días calendario de revisado o reparado el producto no es retirado, este se venderá en un remate por el valor de la revisión, mano de obra y repuestos.
+                        </li>
+                        <br>
+                        <li>
+                            <b>2.15.</b> Si el cliente solicita y paga el envío de mercancía a través de una empresa transportadora en cualquiera de sus modalidades; asume toda la responsabilidad de las pérdidas, daños, y averías de la mercancía.
+                        </li>
+                        <br>
+                        <li>
+                            <b>2.16.</b> El cliente debe exigir los seriales de los equipos, los cuales deberán estar plasmados en un documento anexo a la factura de venta.
+                        </li>
+                        <br>
+                    </ul>
+                    <br>
+                    <br>
+                    <div #envios class="titulo-catalogo">
+                        <mat-toolbar>
+                            <span>ENVIOS</span>
+                        </mat-toolbar>
+                    </div>
+                    <br>
+                    <br>
+                    <p>Lightcon ingeniería SAS ofrece envíos gratis en todos sus productos dentro de la ciudad de Bogotá, bajo los siguientes términos;</p>
+                    <br>
+                    <br>
+                    <ul>
+                        <li>
+                            <b>3.1.</b> Para productos que se puede llevar en moto, por compras iguales o superiores a $30.000 (treinta mil pesos) m/cte incluido IVA.
+                        </li>
+                        <br>
+                        <li>
+                            <b>3.2.</b> Para productos que por su peso o tamaño requieran un vehículo diferente a moto, el valor de la compra debe ser igual o superior a $500.000 (quinientos mil pesos) m/cte incluido IVA.
+                        </li>
+                        <br>
+                        <li>
+                            <b>3.3.</b> En caso de no estar dentro de los dos anteriores términos el valor del envió dentro de la ciudad de Bogotá será de $60.000 (sesenta mil pesos) m/cte.
+                        </li>
+                        <br>
+                        <li>
+                            <b>3.4.</b> Si el cliente requiere el envió fuera de la ciudad de Bogotá, este valor es adicional y será liquidado de acuerdo al peso, volumen y ubicación de entrega.
+                        </li>
+                        <br>
+                        <li>
+                            <b>3.5.</b> Una vez generada la orden de compra o el pago correspondiente (ver anexos y preguntas frecuentes), se debe solicitar el servicio de transporte. Si el pedido se agenda, entre las horas 08:00am a 12:00m la mercancía
+                            se estará entregando el mismo día antes de las 18:00pm o el día siguiente en el transcurso del día. Si el pedido se agenda entre las horas 13:00pm a 18:00pm el producto se estará entregando al día siguiente en el transcurso
+                            del día o al segundo día hábil después de agendado. Lo anterior de acuerdo al orden y la cantidad de pedidos que estén programados para esta entrega.
+                        </li>
+                        <br>
+                        <li>
+                            <b>3.6.</b> Al momento de recibir su pedido es importante que sea recibido por una persona mayor de edad que pueda validar el estado y cantidades de su pedido. Si por algún caso el pedido tiene alguna inconsistencia como; mal
+                            estado, faltan unidades, hay elementos que no solicito, los elementos que le están entregando no coinciden con lo que solicito. Es importante comunicarse inmediatamente con el departamento de atención al cliente y con mucho
+                            gusto le ayudaremos.
+                        </li>
+                        <br>
+                    </ul>
+                    <br>
+                    <br>
+                    <div #devoluciones class="titulo-catalogo">
+                        <mat-toolbar>
+                            <span>DEVOLUCIONES</span>
+                        </mat-toolbar>
+                    </div>
+                    <br>
+                    <br>
+                    <ul>
+                        <li>
+                            <b>4.1.</b> Las devoluciones de los productos se considera dentro del protocolo de garantías, solo se aceptan cambios hasta cinco (5) días calendario después de efectuada la compra y haber recibido el producto; este se debe
+                            entregar bajo las mismas condiciones en que fue recibido, empaque original, etiquetas, sellos accesorios y manuales. Se debe informar al departamento de atención al cliente antes de realizar la devolución y enviar copia de
+                            la factura de compra.
+                        </li>
+                        <br>
+                        <li>
+                            <b>4.2.</b> Es importante recordar que las devoluciones por garantía solo se cumplen por fallas producidas por defectos de fábrica. En ningún caso Lightcon ingeniería SAS recibirá productos con daños por mala manipulación.
+                        </li>
+                        <br>
+                        <li>
+                            <b>4.3.</b> Los tiempos de entrega son informados en el presente documento, (ver ENVIOS ítem 3.5), por esto es importante que el cliente tenga en cuenta dichos tiempos al momento de solicitar sus productos. Lightcon ingeniería
+                            SAS en ningún caso recibirá devoluciones por tiempos de envió, mientras estos estén dentro de los ya estipulados en el numeral indicado.
+                        </li>
+                        <br>
+                        <li>
+                            <b>4.4.</b> Los productos que sean aceptados durante la revisión en el laboratorio por garantía, serán reemplazados por uno nuevo o por uno del mismo valor. Por esto es importante verificar con anterioridad, ya nuestro inventario
+                            está sujeto a disponibilidad en el momento del cambio.
+                        </li>
+                        <br>
+                        <li>
+                            <b>4.5.</b> Es importante tener claro la finalidad y funcionalidad del producto a adquirir, ya que nuestro principal propósito es que el producto que adquiera el cliente sea el que supla su necesidad y evitar al máximo cualquier
+                            inconveniente, por esto es importante adquirir la referencia adecuada para su aplicacion. De acuerdo a lo anterior Lightcon ingeniería SAS no hace devolución de dinero, el valor del elemento o producto debe ser redimido en
+                            productos que cubran el valor del mismo.
+                        </li>
+                        <br>
+                        <li>
+                            <b>4.6.</b> El transporte del producto que requiera ser devuelto por cualquiera de los casos expuestos, debe ser asumido por el cliente.
+                        </li>
+                        <br>
+                    </ul>
+                    <br>
+                    <br>
+                    <div #anexos class="titulo-catalogo">
+                        <mat-toolbar>
+                            <span>ANEXOS Y PREGUNTAS FRECUENTES</span>
+                        </mat-toolbar>
+                    </div>
+                    <br>
+                    <ul>
+                        <li>
+                            <b>5.1.</b> Los clientes que tienen convenio de pago a crédito, después de enviar la orden de compra, su pedido será agendado dentro de los mismos horarios en que sea aprobada de la compra.
+                        </li>
+                        <br>
+                        <li>
+                            <b>5.2.</b> Los clientes que realicen el pago directamente en el punto de venta, podrán agendar el envió de su pedido inmediatamente después de realizado el pago.
+                        </li>
+                        <br>
+                        <li>
+                            <b>5.3.</b> Para transacciones en línea, pagos por transferencias y giros. El envió de su pedido podrá ser agendado en el momento que sea confirmada la operación y análisis de datos.
+                        </li>
+                        <br>
+                        <li>
+                            <b>5.4.</b> Si mi pedido no ha llegado, ¿qué puedo hacer?
+                            <a fxLayout="column">•No se preocupe le ayudaremos lo antes posible, comuníquese a nuestro departamento de atención al cliente por medio de las siguientes opciones:</a>
+                            <a fxLayout="column">-Fijo en Bogotá: 774 50 82</a>
+                            <a fxLayout="column">-Mensaje por WhatsApp: 311 2403535</a>
+                            <a fxLayout="column">-Vía correo: conectaconingenieria@gmail.com, lightconingenieriasas@gmail.com
+
+                                </a>
+                        </li>
+                        <br>
+                        <li>
+                            <b>5.5.</b> Si quiero corregir mi dirección de envió, ¿qué debo hacer?
+                            <a fxLayout="column">•No se preocupe, aunque queremos llevar su pedido lo antes posible, también estamos atentos a sus solicitudes por favor comuníquese dentro de las 2 horas hábiles, después de haber agendado su pedido y con gusto le ayudaremos.</a>
+                        </li>
+                        <br>
+                    </ul>
+                    <br>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

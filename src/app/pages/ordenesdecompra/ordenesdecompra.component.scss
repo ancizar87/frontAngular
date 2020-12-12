@@ -1,0 +1,35 @@
+.order-nro{
+  font-size:.8rem !important;
+  @media(max-width:599px) {
+    white-space: nowrap !important;
+    text-overflow: ellipsis !important;
+    overflow: hidden !important;
+  }
+}
+
+.nombre-producto {
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap;
+  a{
+    color:#333 !important;
+    font-size:.8rem !important;
+    font-family: "Bai Jamjuree", sans-serif !important;
+  }
+}
+
+.mat-list-item{
+  @media (max-width:959px){
+    height: inherit !important;
+    div{
+      div{
+        padding:5px 0 !important
+      }
+    }
+  }
+}
+
+.activeSuccess{
+  border:1px solid #25a230 !important;
+  color: rgba(37, 162, 48, .8) !important
+}

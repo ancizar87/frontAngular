@@ -1,0 +1,33 @@
+<div class="container">
+    <div fxLayout="row wrap">
+        <h3 class="title-content" fxFlex="100%">Marcas Disponibles en la Tienda </h3>
+        <div fxFlex="100">
+          <div fxLayout="row" fxLayoutGap="5px">
+            <mat-divider fxFlex="3" class="divider-title"></mat-divider>
+            <mat-divider fxFlex="10px" class="divider-title"></mat-divider>
+            <mat-divider fxFlex="10" class="divider-title"></mat-divider>
+          </div>
+        </div>
+    </div>
+
+    <ngu-carousel #marcaCarousel [inputs]="carouselNuestrasMarcas" [dataSource]="imgags">
+
+        <ngu-tile *nguCarouselDef="let item; let i = index">
+
+            <div class="image-marca">
+                <img [src]="item.imgS">
+            </div>
+
+        </ngu-tile>
+
+        <button mat-button NguCarouselPrev class="leftRs">
+        <mat-icon>keyboard_arrow_left</mat-icon>
+        </button>
+        <button mat-button NguCarouselNext class="rightRs">
+        <mat-icon>keyboard_arrow_right</mat-icon>
+        </button>
+        <!-- <ul class="myPoint" NguCarouselPoint>
+        <li *ngFor="let i of myCarousel.pointNumbers; let i = index" [class.active]="i==myCarousel.activePoint" (click)="myCarousel.moveTo(i)" [style.background]="'url(' + carouselTileItems[i] + ')'"></li>
+    </ul>-->
+    </ngu-carousel>
+</div>

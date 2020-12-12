@@ -1,0 +1,7 @@
+<div mat-dialog-content>
+  <div class="content-dialog" fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="15px">
+    <mat-spinner diameter="20" *ngIf="messageDialog.messageDialog !== 'Será redirigido a la opción de pago.'"></mat-spinner>
+    <mat-icon class="animated zoomIn faster" *ngIf="messageDialog.messageDialog === 'Será redirigido a la opción de pago.'">done_all</mat-icon>
+    <span>{{ messageDialog.messageDialog }}</span>
+  </div>
+</div>

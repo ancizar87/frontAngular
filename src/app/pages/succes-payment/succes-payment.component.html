@@ -1,0 +1,15 @@
+<div class="container">
+  <div fxLayout="row wrap" *ngIf="checkOrder" fxLayoutAlign="center center" [ngClass]="checkOrder['status'] == 'DECLINED' ? 'declined':''" class="content-box animated zoomIn delay-1s faster">
+    <div fxFlex.gt-xs="80" fxFlex="90" class="box-payment">
+      <div class="content-icon animated zoomIn faster">
+        <mat-icon class="animated fadeInUp faster">{{checkOrder['status'] != 'DECLINED' ? 'check_circle_outline':'clear'}}</mat-icon>
+      </div>
+      <h1>{{checkOrder['status'] != 'DECLINED' ? 'Gracías por su compra':'No hemos detectado su pago'}}</h1>
+      <sub><h2>{{checkOrder['status'] != 'DECLINED' ? 'Hemos registrado su pedido' : 'Su orden quedara como pendiente'}}</h2></sub>
+      <div fxLayout="row wrap" fxLayoutAlign="center center">
+        <mat-divider></mat-divider>
+      </div>
+      <p>{{checkOrder['status'] != 'DECLINED' ? 'En breve validaremos su orden para ser despachada.' : 'Si tiene algún inconveniente para lograr su pago, por favor comuniquese al 311 2403535'}}</p>
+    </div>
+  </div>
+</div>

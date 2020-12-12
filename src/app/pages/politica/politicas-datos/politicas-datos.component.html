@@ -1,0 +1,503 @@
+<div class="banner-interno" fxLayout.gt-sm="row" fxLayout="column" fxLayoutAlign="center center" fxLayoutAlign.gt-sm="space-between center">
+    <div class="container">
+        <div fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign.sm="center center" fxLayoutAlign.xs="center center">
+            <h1>Politica de Tratamiento de Datos</h1>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div fxLayout="row wrap" fxLayoutAlign="center start" fxLayoutGap.gt-md="2%">
+        <div fxFlex="98" fxFlex.gt-md="23" class="filters-left">
+            <mat-accordion>
+                <mat-expansion-panel [expanded]="expand" [disabled]="expand" #mep="matExpansionPanel">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            INFORMACION
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <mat-panel-description>
+                        <mat-list>
+                            <mat-list-item (click)="mep.expanded = this.hideExp; scroll(politica)">
+                                <p mat-line>Politica de Privacidad</p>
+                            </mat-list-item>
+                            <mat-list-item (click)="mep.expanded = this.hideExp; scroll(marco)">
+                                <p mat-line>Marco Normativo</p>
+                            </mat-list-item>
+                            <mat-list-item (click)="mep.expanded = this.hideExp; scroll(definiciones)">
+                                <p mat-line>Definiciones</p>
+                            </mat-list-item>
+                            <mat-list-item (click)="mep.expanded = this.hideExp; scroll(responsable)">
+                                <p mat-line>Responsable del Tratamiento</p>
+                            </mat-list-item>
+                            <mat-list-item (click)="mep.expanded = this.hideExp; scroll(encargado)">
+                                <p mat-line>Encargado del Tratamiento</p>
+                            </mat-list-item>
+                            <mat-list-item (click)="mep.expanded = this.hideExp; scroll(finalidad)">
+                                <p mat-line>Finalidad de la Pilitica</p>
+                            </mat-list-item>
+                            <mat-list-item (click)="mep.expanded = this.hideExp; scroll(tratamiento)">
+                                <p mat-line>Tratamiento de la Informacion</p>
+                            </mat-list-item>
+                            <mat-list-item (click)="mep.expanded = this.hideExp; scroll(autorizacion)">
+                                <p mat-line>Autorizacion</p>
+                            </mat-list-item>
+                            <mat-list-item (click)="mep.expanded = this.hideExp; scroll(prueba)">
+                                <p mat-line>Prueba de la Autorizacion</p>
+                            </mat-list-item>
+                            <mat-list-item (click)="mep.expanded = this.hideExp; scroll(derechos)">
+                                <p mat-line>Derechos de los Titulares</p>
+                            </mat-list-item>
+                            <mat-list-item (click)="mep.expanded = this.hideExp; scroll(ejercicio)">
+                                <p mat-line>Ejercicio Derechos de los Titulares</p>
+                            </mat-list-item>
+                            <mat-list-item (click)="mep.expanded = this.hideExp; scroll(procedimiento)">
+                                <p mat-line>Procedimientos</p>
+                            </mat-list-item>
+                            <mat-list-item (click)="mep.expanded = this.hideExp; scroll(vigencia)">
+                                <p mat-line>Vigencia</p>
+                            </mat-list-item>
+                        </mat-list>
+                    </mat-panel-description>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+        <div #politica class="border" fxFlex="100" fxFlex.xs="100" fxFlex.gt-md="73">
+            <div fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap.gt-xs="30px">
+                <div fxFlex="100" fxFlex.xs="100" fxFlex.gt-md="100">
+                    <div class="titulo-catalogo">
+                        <mat-toolbar>
+                            <span>POLÍTICA DE PRIVACIDAD Y TRATAMIENTO DE DATOS PERSONALES</span>
+                        </mat-toolbar>
+                    </div>
+                    <br>
+                    <br>
+                    <h3> <b>Generalidades</b> </h3>
+                    <br>
+                    <br>
+                    <p>El presente documento establece las Políticas de Tratamiento de Datos Personales de <b>LIGHTCON INGENIERIA SAS</b>, actuando como empresa privada, en cumplimiento de las disposiciones de la Ley 1581 de 2012 y el Decreto 1377 de 2013,
+                        y en él se describen los mecanismos por medio de los cuales se garantiza un manejo adecuado de los datos personales recolectados en sus bases de datos, con el fin de permitir a los titulares el ejercicio del derecho de Hábeas Data.</p>
+                    <br>
+                    <br>
+                    <h3>Responsable</h3>
+                    <br>
+                    <br>
+                    <p><b>LIGHTCON INGENIERIA SAS</b>, es una persona jurídica de derecho privado con domicilio en la ciudad de Bogotá, con NIT 900.365.003-3, cuyos datos de contactos son los siguientes: Dirección Carrera 45A #129A-04, teléfono (571) 77405082,
+                        celular 3112403535, correo electrónico conectaconingenieria@gmail.com</p>
+                    <br>
+                    <br>
+                    <div #marco class="titulo-catalogo">
+                        <mat-toolbar>
+                            <span>MARCO NORMATIVO</span>
+                        </mat-toolbar>
+                    </div>
+                    <br>
+                    <br>
+                    <ul>
+                        <li>
+                            <b>Artículo 15 de la Constitución Política de Colombia.</b>
+                        </li>
+                        <br>
+                        <li>
+                            <b>Ley 1581 del 17 de octubre de 2012.</b>
+                        </li>
+                        <br>
+                        <li>
+                            <b>Decreto 1377 del 27 de junio de 2013.</b>
+                        </li>
+                        <br>
+                        <br>
+                    </ul>
+                    <br>
+                    <br>
+                    <div #definiciones class="titulo-catalogo">
+                        <mat-toolbar>
+                            <span>DEFINICIONES</span>
+                        </mat-toolbar>
+                    </div>
+                    <br>
+                    <br>
+                    <p>Para efectos de la ejecución de la presente política y de conformidad con la normatividad legal, serán aplicables las siguientes definiciones:</p>
+                    <br>
+                    <ul>
+                        <li>
+                            <b>a.</b> Autorización: Consentimiento previo, expreso e informado del Titular para llevar a cabo el Tratamiento de datos personales.
+                        </li>
+                        <br>
+                        <li>
+                            <b>b.</b> Dato personal: Cualquier información vinculada o que pueda asociarse a una o varias personas naturales determinadas o determinables
+                        </li>
+                        <br>
+                        <li>
+                            <b>c.</b> Dato público: Es el dato calificado como tal según los mandatos de la ley o de la Constitución Política y aquel que no sea semiprivado, privado o sensible. Son públicos, entre otros, los datos relativos al estado
+                            civil de las personas, a su profesión u oficio, a su calidad de comerciante o de servidor público y aquellos que puedan obtenerse sin reserva alguna. Por su naturaleza, los datos públicos pueden estar contenidos, entre otros,
+                            en registros públicos, documentos públicos, gacetas y boletines oficiales.
+                        </li>
+                        <br>
+                        <li>
+                            <b>d.</b> Dato privado: Es el dato que por su naturaleza íntima o reservada sólo es relevante para el titular.
+                        </li>
+                        <br>
+                        <li>
+                            <b>e.</b> Datos sensibles: Se entiende por datos sensibles aquellos que afectan la intimidad del Titular o cuyo uso indebido puede generar su discriminación, tales como aquellos que revelen el origen racial o étnico, la orientación
+                            política, las convicciones religiosas o filosóficas, la pertenencia a sindicatos, organizaciones sociales, de derechos humanos o que promueva intereses de cualquier partido político o que garanticen los derechos y garantías
+                            de partidos políticos de oposición, así como los datos relativos a la salud, a la vida sexual y los datos biométricos.
+                        </li>
+                        <br>
+                        <li>
+                            <b>f.</b> Base de Datos: Conjunto organizado de datos personales que sea objeto de Tratamiento.
+                        </li>
+                        <br>
+                        <li>
+                            <b>g.</b> Encargado del Tratamiento: Persona natural o jurídica, pública o privada, que por sí misma o en asocio con otros, realice el Tratamiento de datos personales por cuenta del Responsable del Tratamiento.
+                        </li>
+                        <br>
+                        <li>
+                            <b>h.</b> Responsable del Tratamiento: Persona natural o jurídica, pública o privada, que por sí misma o en asocio con otros, decida sobre la base de datos y/o el Tratamiento de los datos;
+                        </li>
+                        <br>
+                        <li>
+                            <b>i.</b>Tratamiento: Cualquier operación o conjunto de operaciones sobre datos personales, tales como la recolección, almacenamiento, uso, circulación o supresión de los mismos.
+                        </li>
+                        <br>
+                        <li>
+                            <b>j.</b> Titular: Persona natural cuyos datos personales sean objeto de tratamiento.
+                        </li>
+                        <br>
+                    </ul>
+                    <br>
+                    <br>
+                    <div #responsable class="titulo-catalogo">
+                        <mat-toolbar>
+                            <span>RESPONSABLE DEL TRATAMIENTO</span>
+                        </mat-toolbar>
+                    </div>
+                    <br>
+                    <br>
+                    <p>En cumplimiento de lo establecido en la ley 1581 de 2012, Artículo 17, <b>LIGHTCON INGENIERIA SAS</b> como responsable del tratamiento cumplirá con los siguientes deberes:</p>
+                    <br>
+                    <br>
+                    <ul>
+                        <li>
+                            <b>1.</b> Garantizar al Titular, en todo tiempo, el pleno y efectivo ejercicio del derecho de hábeas data;
+                        </li>
+                        <br>
+                        <li>
+                            <b>2.</b> Solicitar y conservar, en las condiciones previstas en la ley, copia de la respectiva autorización otorgada por el Titular;
+                        </li>
+                        <br>
+                        <li>
+                            <b>3.</b> Informar debidamente al Titular sobre la finalidad de la recolección y los derechos que le asisten por virtud de la autorización otorgada;
+                        </li>
+                        <br>
+                        <li>
+                            <b>4.</b> Conservar la información bajo las condiciones de seguridad necesarias para impedir su adulteración, pérdida, consulta, uso o acceso no autorizado o fraudulento;
+                        </li>
+                        <br>
+                        <li>
+                            <b>5.</b> Garantizar que la información que se suministre al Encargado del Tratamiento sea veraz, completa, exacta, actualizada, comprobable y comprensible;
+                        </li>
+                        <br>
+                        <li>
+                            <b>6.</b> Actualizar la información, comunicando de forma oportuna al Encargado del Tratamiento, todas las novedades respecto de los datos que previamente le haya suministrado y adoptar las demás medidas necesarias para que
+                            la información suministrada a este se mantenga actualizada;
+                        </li>
+                        <br>
+                        <li>
+                            <b>7.</b> Rectificar la información cuando sea incorrecta y comunicar lo pertinente al Encargado del Tratamiento;
+                        </li>
+                        <br>
+                        <li>
+                            <b>8.</b> Suministrar al Encargado del Tratamiento, según el caso, únicamente datos cuyo Tratamiento esté previamente autorizado de conformidad con lo previsto en la presente ley;
+                        </li>
+                        <br>
+                        <li>
+                            <b>9.</b> Exigir al Encargado del Tratamiento en todo momento, el respeto a las condiciones de seguridad y privacidad de la información del Titular;
+                        </li>
+                        <br>
+                        <li>
+                            <b>10.</b> Tramitar las consultas y reclamos formulados en los términos señalados en la presente ley;
+                        </li>
+                        <br>
+                        <li>
+                            <b>11.</b> Adoptar un manual interno de políticas y procedimientos para garantizar el adecuado cumplimiento de la presente ley y en especial, para la atención de consultas y reclamos;
+                        </li>
+                        <br>
+                        <li>
+                            <b>12.</b> Informar al Encargado del Tratamiento cuando determinada información se encuentra en discusión por parte del Titular, una vez se haya presentado la reclamación y no haya finalizado el trámite respectivo;
+                        </li>
+                        <br>
+                        <li>
+                            <b>13.</b> Informar a solicitud del Titular sobre el uso dado a sus datos;
+                        </li>
+                        <br>
+                        <li>
+                            <b>14.</b> Informar a la autoridad de protección de datos cuando se presenten violaciones a los códigos de seguridad y existan riesgos en la administración de la información de los Titulares.
+                        </li>
+                        <br>
+                        <li>
+                            <b>15.</b> Cumplir las instrucciones y requerimientos que imparta la Superintendencia de Industria y Comercio.
+                        </li>
+                        <br>
+                    </ul>
+                    <br>
+                    <br>
+                    <div #encargado class="titulo-catalogo">
+                        <mat-toolbar>
+                            <span>ENCARGADO DEL TRATAMIENTO</span>
+                        </mat-toolbar>
+                    </div>
+                    <br>
+                    <p>En cumplimiento de lo establecido en la ley 1581 de 2012, Artículo 18 se confirma a Fredy Hernández Torres de <b>LIGHTCON INGENIERIA SAS</b>, como encargado del tratamiento cumplirá con los siguientes deberes:</p>
+                    <br>
+                    <ul>
+                        <li>
+                            <b>1.</b> Garantizar al Titular, en todo tiempo, el pleno y efectivo ejercicio del derecho de hábeas data;
+                        </li>
+                        <br>
+                        <li>
+                            <b>2.</b> Conservar la información bajo las condiciones de seguridad necesarias para impedir su adulteración, pérdida, consulta, uso o acceso no autorizado o fraudulento;
+                        </li>
+                        <br>
+                        <li>
+                            <b>3.</b> Realizar oportunamente la actualización, rectificación o supresión de los datos en los términos de la presente ley;
+                        </li>
+                        <br>
+                        <li>
+                            <b>4.</b> Actualizar la información reportada por los Responsables del Tratamiento dentro de los cinco (5) días hábiles contados a partir de su recibo;
+                        </li>
+                        <br>
+                        <li>
+                            <b>5.</b> Tramitar las consultas y los reclamos formulados por los Titulares en los términos señalados en la presente ley;
+                        </li>
+                        <br>
+                        <li>
+                            <b>6.</b> Adoptar un manual interno de políticas y procedimientos para garantizar el adecuado cumplimiento de la presente ley y, en especial, para la atención de consultas y reclamos por parte de los Titulares;
+                        </li>
+                        <br>
+                        <li>
+                            <b>7.</b> Registrar en la base de datos las leyendas "reclamo en trámite" en la forma en que se regula en la presente ley;
+                        </li>
+                        <br>
+                        <li>
+                            <b>8.</b> Insertar en la base de datos la leyenda "información en discusión judicial" una vez notificado por parte de la autoridad competente sobre procesos judiciales relacionados con la calidad del dato personal;
+                        </li>
+                        <br>
+                        <li>
+                            <b>9.</b> Abstenerse de circular información que esté siendo controvertida por el Titular y cuyo bloqueo haya sido ordenado por la Superintendencia de Industria y Comercio;
+                        </li>
+                        <br>
+                        <li>
+                            <b>10.</b> Permitir el acceso a la información únicamente a las personas que pueden tener acceso a ella;
+                        </li>
+                        <br>
+                        <li>
+                            <b>11.</b> Informar a la Superintendencia de Industria y Comercio cuando se presenten violaciones a los códigos de seguridad y existan riesgos en la administración de la información de los Titulares;
+                        </li>
+                        <br>
+                        <li>
+                            <b>12.</b> Cumplir las instrucciones y requerimientos que imparta la Superintendencia de Industria y Comercio.
+                        </li>
+                        <br>
+                        <p>En el evento en que concurran las calidades de Responsable del Tratamiento y Encargado del Tratamiento en la misma persona, le será exigible el cumplimiento de los deberes previstos para cada uno.</p>
+                        <br>
+                        <p> <b>LIGHTCON INGENIERIA SAS</b> velará para que el encargado del tratamiento de datos personales de cumplimiento a las obligaciones que se encuentran en la política.</p>
+                        <br>
+                        <br>
+                    </ul>
+                    <br>
+                    <br>
+                    <div #finalidad class="titulo-catalogo">
+                        <mat-toolbar>
+                            <span>FINALIDAD DE LA POLÍTICA</span>
+                        </mat-toolbar>
+                    </div>
+                    <br>
+                    <br>
+                    <p>Los datos personales que usted, sus clientes, proveedores, empleados y contratistas, entre otros, suministren en virtud de las operaciones que solicite o celebre con <b>LIGHTCON INGENIERIA SAS</b>, tendrán como finalidad ser usados
+                        en el desarrollo del objeto social para la ejecución de las actividades de importación y distribución de componentes electrónicos, y en general cualquier otra actividad en desarrollo de su objeto social. Los datos también tienen
+                        como finalidad ser utilizados para dar respuesta a los titulares frente a quejas, reclamos, felicitaciones y todas las inquietudes que puedan surgir.
+                    </p>
+                    <br>
+                    <br>
+                    <div #tratamiento class="titulo-catalogo">
+                        <mat-toolbar>
+                            <span>TRATAMIENTO DE LA INFORMACIÓN.</span>
+                        </mat-toolbar>
+                    </div>
+                    <br>
+                    <br>
+                    <p>La información contenida en las bases de datos de <b>LIGHTCON INGENIERIA SAS</b> no se transfiere a terceros, no se alquila, ni se vende y solo es tratada para los fines que buscan el desarrollo del objeto social, garantizando un tratamiento
+                        confidencial y privado a todos los datos almacenados.
+                    </p>
+                    <br>
+                    <p>Toda la información que contenga datos personales, se mantendrá segura y será manejada en Bases de Datos virtuales que se encuentran protegidas por servidores internos y externos a los cuales no se tiene acceso desde un área externa
+                        de la compañía y también se manejara en archivos físicos que se encuentran ubicados en las instalaciones de la compañía y a los que solo tienen acceso las áreas encargadas y autorizadas.</p>
+                    <br>
+                    <p>La información de los titulares que reposa en las Bases de Datos físicas y electrónicas de <b>LIGHTCON INGENIERIA SAS</b>, para su tratamiento cuenta con su correspondiente autorización para el tratamiento.</p>
+                    <br>
+                    <br>
+                    <div #autorizacion class="titulo-catalogo">
+                        <mat-toolbar>
+                            <span>AUTORIZACIÓN</span>
+                        </mat-toolbar>
+                    </div>
+                    <br>
+                    <br>
+                    <p>Desde el momento en el que se esté realizando la recolección de los datos, LIGHTCON INGENIERIA SAS, solicitará autorización por parte del titular para dar tratamiento a sus datos personales, indicando la finalidad para la cual se recolectan
+                        los datos, el término durante el cual se realzará el tratamiento y sus datos no serán transferidos, o transmitidos salvo los siguientes casos:
+                    </p>
+                    <br>
+                    <ul>
+                        <li>
+                            • Información requerida por una entidad pública o administrativa en el ejercicio de sus funciones legales.
+                        </li>
+                        <br>
+                        <li>
+                            • Datos de naturaleza pública.
+                        </li>
+                        <br>
+                        <li>
+                            • Casos de urgencia médica o sanitaria.
+                        </li>
+                        <br>
+                        <li>
+                            • Tratamiento de información autorizado por la ley para fines históricos, estadísticos o científicos.
+                        </li>
+                        <br>
+                        <li>
+                            • Datos relacionados con el registro civil de las personas.
+                        </li>
+                        <br>
+                    </ul>
+                    <br>
+                    <div #prueba class="titulo-catalogo">
+                        <mat-toolbar>
+                            <span>PRUEBA DE LA AUTORIZACIÓN</span>
+                        </mat-toolbar>
+                    </div>
+                    <br>
+                    <br>
+                    <p>La autorización para realizar el tratamiento de datos se obtendrá de forma física, diligenciada por cada uno de los titulares y se mantendrá en las bases de datos físicas de la sociedad y se tendrá a disposición de los titulares la
+                        prueba física.
+                    </p>
+                    <br>
+                    <p>La autorización podrá ser revocada, salvo que no esté impedida por una disposición legal o contractual.</p>
+                    <br>
+                    <br>
+                    <div #derechos class="titulo-catalogo">
+                        <mat-toolbar>
+                            <span>DERECHOS DE LOS TITULARES</span>
+                        </mat-toolbar>
+                    </div>
+                    <br>
+                    <br>
+                    <ul>
+                        <li>
+                            <b>a.</b> Acceder de forma gratuita a los datos proporcionados.
+                        </li>
+                        <br>
+                        <li>
+                            <b>b.</b> Conocer, actualizar y rectificar sus datos personales frente a <b>LIGHTCON INGENIERIA SAS</b>, y las demás compañías encargadas del tratamiento de sus datos personales. Este derecho se podrá ejercer, entre otros frente
+                            a datos parciales, inexactos, incompletos, fraccionados, que induzcan a error, o aquellos cuyo tratamiento esté expresamente prohibido o no haya sido autorizado.
+                        </li>
+                        <br>
+                        <li>
+                            <b>c.</b> Solicitar prueba de la autorización otorgada, salvo cuando expresamente se exceptúe en la ley como requisito para el tratamiento, de conformidad con lo previsto en el artículo 10 de la Ley 1581 de 2012 (o en su defecto
+                            con las normas que reglamenten, adicionen, ejecuten, complementen, modifiquen, supriman o deroguen) o cuando se haya presentado la continuidad del tratamiento acorde con el artículo 10 numeral 4º del Decreto 1377 de 2013.
+                        </li>
+                        <br>
+                        <li>
+                            <b>d.</b> Ser informado por <b>LIGHTCON INGENIERIA SAS</b>, o por las compañías encargadas del tratamiento de los datos personales, previa solicitud, acerca de la existencia de datos que le conciernan y el uso que se le ha
+                            dado a sus datos personales.
+                        </li>
+                        <br>
+                        <li>
+                            <b>e.</b> Ser informado, previa solicitud, respecto del uso que les ha dado a sus datos personales.
+                        </li>
+                        <br>
+                        <li>
+                            <b>f.</b> Presentar ante la Superintendencia de Industria y Comercio quejas por infracciones a los dispuesto en la Ley 1581 de 2012 y las demás normas que la modifiquen, adicionen o complementen.
+                        </li>
+                        <br>
+                        <li>
+                            <b>g.</b> Revocar la autorización y/o solicitar la supresión del dato cuando en tratamiento no se respeten los principios, derechos y garantías constitucionales y legales. La revocatoria y/o supresión procederá cuando la Superintendencia
+                            de Industria y Comercio haya determinado que en el tratamiento el responsable o encargado han incurrido en conductas contrarias a la ley y a la Constitución. La solicitud de supresión de la información y la revocatoria de la
+                            autorización no procederán cuando el titular tenga un deber legal o contractual de permanecer en la base de datos o el responsable tenga el deber legal o contractual de continuar con el tratamiento.
+                        </li>
+                        <br>
+                    </ul>
+                    <div #ejercicio class="titulo-catalogo">
+                        <mat-toolbar>
+                            <span>EJERCICIO DE LOS DERECHOS DE LOS TITULARES</span>
+                        </mat-toolbar>
+                    </div>
+                    <br>
+                    <p>En aras de proteger y mantener la confidencialidad de los Datos Personales de los Titulares, podrán ejercer los derechos que la Ley prevé y por ello <b>LIGHTCON INGENIERIA SAS</b>, determina que el procedimiento para resolver dudas,
+                        inquietudes o, conocer, actualizar, rectificar, suprimir información o revocar la autorización para el Tratamiento de Datos Personales; el titular deberá ponerse en contacto con el encargado de <b>LIGHTCON INGENIERIA SAS</b>, a
+                        través de los siguientes canales dispuestos para ello:</p>
+                    <br>
+                    <br>
+                    <ul>
+                        <li>
+                            <b>i.</b> A través de las líneas de atención dispuesta para tal fin, teléfono: (571) 7745082 con la persona encargada, Fredy Hernández Torres.
+                        </li>
+                        <br>
+                        <li>
+                            <b>i.i.</b> Remitiendo solicitud por escrito al correo electrónico conectaconingenieria@gmail.com
+                        </li>
+                        <br>
+                        <li>
+                            <b>i.i.i.</b> Remitiendo solicitud por escrito al domicilio social de <b>LIGHTCON INGENIERIA SAS</b> ubicado en la dirección carrera 45A # 129A-04 en la ciudad de Bogotá Código Postal 111111.
+                        </li>
+                        <br>
+                    </ul>
+                    <p>Los Titulares de los Datos Personales, podrán en todo momento, solicitar a LIGHTCON INGENIERIA SAS., la supresión de sus datos y/o revocar la autorización, mediante la presentación de un reclamo de acuerdo con lo establecido en el
+                        artículo 15 de la Ley 1581 de 2012.</p>
+                    <br>
+                    <br>
+                    <div #procedimiento class="titulo-catalogo">
+                        <mat-toolbar>
+                            <span>PROCEDIMIENTOS</span>
+                        </mat-toolbar>
+                    </div>
+                    <br>
+                    <br>
+                    <p> <b>CONSULTAS:</b> Para realizar una consulta, acceso a datos personales y/o solicitud de prueba de la autorización, por medio de cualquiera de los canales habilitados para tal fin, quien se encuentre habilitado para realizar la consulta
+                        ante
+                        <b>LIGHTCON INGENIERIA SAS.</b>, deberá identificarse y solicitar la información que requiere. La consulta será atendida en un término máximo de diez (10) días hábiles contados a partir de la fecha de recibo de la misma. Cuando
+                        no fuere posible atender la consulta dentro de dicho término, se informará al interesado, expresando los motivos de la demora y señalando la fecha en que se atenderá su consulta, la cual en ningún caso podrá superar los cinco (5)
+                        días hábiles siguientes al vencimiento del primer término.</p>
+                    <br>
+                    <p> <b>RECLAMOS:</b> Cuando se requiera realizar un reclamo, instaurar una queja o solicitarse la supresión de datos personales, deberá realizarse por los canales habilitados para tal fin por el Responsable, mediante comunicación en la
+                        que se describa los hechos que dan lugar al reclamo, la dirección y acompañado de los documentos que se quisiera hacer valer. Si el reclamo resulta incompleto, se requerirá al interesado dentro de los cinco (5) días siguientes
+                        a la recepción del reclamo para que subsane las fallas. Transcurridos dos (2) meses desde la fecha del requerimiento, sin que el solicitante presente la información requerida, se entenderá que ha desistido del reclamo. Se informará
+                        en el término máximo de dos (2) días al área encargada para surtir el trámite, en caso de que quien reciba el reclamo no sea el competente para resolverlo.
+                    </p>
+                    <br>
+                    <p>Una vez se reciba el reclamo en debida forma por parte del área encargada se incluirá en la base de datos la leyenda “reclamo en trámite” y el motivo del mismo en el término máximo de dos (2) días hábiles, leyenda que se mantendrá
+                        hasta que el reclamo sea decidido. El reclamo será atendido en el término máximo de quince (15) días hábiles contados a partir del día siguiente a la fecha de recibo. En caso de no ser posible atender el reclamo en el término inicial,
+                        <b>LIGHTCON INGENIERIA SAS</b>, informará al interesado los motivos de la demora y la fecha en que se atenderá su reclamo, este segundo término será máximo de ocho (8) días hábiles contados desde el vencimiento del primer término.
+                    </p>
+                    <br>
+                    <p>Quien realice el reclamo deberá identificarse plenamente con el fin de verificar si cuenta con la capacidad para realizar este trámite y responder a su solicitud.
+                    </p>
+                    <br>
+                    <br>
+                    <div #vigencia class="titulo-catalogo">
+                        <mat-toolbar>
+                            <span>VIGENCIA</span>
+                        </mat-toolbar>
+                    </div>
+                    <br>
+                    <br>
+                    <p>Esta política rige a partir del 05 (cinco) de junio de 2020. El periodo de vigencia de las bases de datos será indefinido por el tiempo necesario y razonable de acuerdo al Tratamiento. Sus modificaciones serán comunicadas oportunamente
+                        a los Titulares antes de implementar los cambios. Si usted desea actualizar su información en nuestra base de datos, por favor descargar el formato que está en el enlace de abajo, diligenciarlo y enviarlo a conectaconingenieria@gmail.com
+                        Si usted desea ser eliminado de nuestra base de datos por favor informarlo también al correo conectaconingenieria@gmail.com
+                    </p>
+                    <br>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

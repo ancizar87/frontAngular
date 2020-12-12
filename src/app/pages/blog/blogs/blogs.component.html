@@ -1,0 +1,54 @@
+<div class="banner-interno" fxLayout.gt-sm="row" fxLayout="column" fxLayoutAlign="center center" fxLayoutAlign.gt-sm="space-between center">
+    <div class="container">
+        <div fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign.sm="center center" fxLayoutAlign.xs="center center">
+            <h1>NUESTRO BLOG</h1>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div fxLayout="row wrap" fxLayoutAlign="center start" fxLayoutGap.gt-md="2%">
+        <div fxFlex="98" fxFlex.gt-md="23" class="filters-left">
+            <mat-accordion>
+                <mat-expansion-panel [expanded]="expand" [disabled]="expand" #mep="matExpansionPanel">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            CATEGORIAS
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <mat-panel-description>
+                        <mat-list>
+                            <mat-list-item *ngFor="let category of categories" (click)="mep.expanded = this.hideExp; filterCategories(category.id)">
+                                <p mat-line>{{category.name}}</p>
+                            </mat-list-item>
+                        </mat-list>
+                    </mat-panel-description>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+        <div #politica class="border" fxFlex="100" fxFlex.xs="100" fxFlex.gt-md="73">
+            <div fxLayout="row wrap" fxLayoutAlign="start center" fxLayoutGap.gt-xs="10px grid">
+                <div fxFlex="50" fxFlex.xs="100" fxFlex.gt-md="33.3" *ngFor="let itemblg of allblogs">
+                    <mat-card>
+                        <mat-card-header>
+                            <mat-card-title [routerLink]="['/blog/',(itemblg.title).split(' ').join('-')]">
+                                {{itemblg.title}}
+                            </mat-card-title>
+                            <mat-card-subtitle>
+                                Publicado por: {{itemblg.author}}
+                            </mat-card-subtitle>
+                        </mat-card-header>
+                        <a [routerLink]="['/blog/',(itemblg.title).split(' ').join('-')]">
+                            <img mat-card-image [src]="urlPublic+itemblg.image_banner" alt="Photo of a Shiba Inu">
+                        </a>
+                        <mat-card-content class="content-noticia">
+                            <div [innerHTML]="itemblg.content | SafeHtml"></div>
+                        </mat-card-content>
+                        <mat-card-actions>
+                            <a mat-button [routerLink]="['/blog/',(itemblg.title).split(' ').join('-')]">Ver más</a>
+                        </mat-card-actions>
+                    </mat-card>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

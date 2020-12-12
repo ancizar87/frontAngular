@@ -1,0 +1,31 @@
+<div class="container" style="padding: 30px 0">
+  <div fxLayout="row wrap" fxLayoutAlign="center start" fxLayoutGap.gt-md="2%">
+      <div fxFlex="98" fxFlex.gt-md="23" class="filters-left">
+          <mat-accordion>
+              <mat-expansion-panel [expanded]="expand" [disabled]="expand" #mep="matExpansionPanel">
+                  <mat-expansion-panel-header>
+                      <mat-panel-title>
+                          INFORMACION
+                      </mat-panel-title>
+                  </mat-expansion-panel-header>
+                  <mat-panel-description>
+                      <mat-list>
+                          <mat-list-item (click)="mep.expanded = this.hideExp; gotoPage('mi-cuenta')">
+                              <p mat-line>Mi cuenta</p>
+                          </mat-list-item>
+                          <mat-list-item (click)="mep.expanded = this.hideExp; gotoPage('ordenes-de-compra')">
+                              <p mat-line>Mis ordenes de compra</p>
+                          </mat-list-item>
+                      </mat-list>
+                  </mat-panel-description>
+              </mat-expansion-panel>
+          </mat-accordion>
+      </div>
+
+      <div fxFlex="98" fxFlex.gt-md="75">
+          <div fxLayout="column">
+            <router-outlet></router-outlet>
+          </div>
+      </div>
+  </div>
+</div>

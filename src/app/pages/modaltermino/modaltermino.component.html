@@ -1,0 +1,23 @@
+<h1 fxLayoutAlign="center center" mat-dialog-title>TÉRMINOS Y CONDICIONES</h1>
+<br>
+<mat-dialog-content>
+    <div fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap.gt-md="2%">
+        <div class="border" fxFlex="90" fxFlex.xs="90" fxFlex.gt-md="73">
+            <div fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap.gt-xs="30px">
+                <div fxFlex="100" *ngIf="allterminos[0] !== undefined" fxFlex.xs="100" fxFlex.gt-md="100">
+                    <div class="titulo-catalogo">
+                        <h2>
+                            {{allterminos[0].title}}
+                        </h2>
+                        <br>
+                        <br>
+                        <div [innerHTML]="allterminos[0].content | SafeHtml"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Acepto</button>
+</mat-dialog-actions>

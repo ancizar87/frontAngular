@@ -1,0 +1,104 @@
+<div class="banner-interno" fxLayout.gt-sm="row" fxLayout="column" fxLayoutAlign="center center" fxLayoutAlign.gt-sm="space-between center">
+    <div class="container">
+        <div fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign.sm="center center" fxLayoutAlign.xs="center center">
+            <h1>Cómo Comprar</h1>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div fxLayout="row wrap" fxLayoutAlign="center start" fxLayoutGap.gt-md="2%">
+        <div fxFlex="98" fxFlex.gt-md="23" class="filters-left">
+            <mat-accordion>
+                <mat-expansion-panel [expanded]="expand" [disabled]="expand" #mep="matExpansionPanel">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            MENÚ
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <mat-panel-description>
+                        <mat-list>
+                            <mat-list-item (click)="mep.expanded = this.hideExp">
+                                <p mat-line routerLink="/productos" routerLinkActive="active">Productos</p>
+                            </mat-list-item>
+                            <mat-list-item (click)="mep.expanded = this.hideExp">
+                                <p mat-line routerLink="/promocion" routerLinkActive="active">Promociones</p>
+                            </mat-list-item>
+                            <mat-list-item (click)="mep.expanded = this.hideExp">
+                                <p mat-line routerLink="/blog" routerLinkActive="active">Blog</p>
+                            </mat-list-item>
+                            <mat-list-item (click)="mep.expanded = this.hideExp">
+                                <p mat-line routerLink="/contacto" routerLinkActive="active">Contacto</p>
+                            </mat-list-item>
+                            <mat-list-item (click)="mep.expanded = this.hideExp">
+                                <p mat-line routerLink="/politica" routerLinkActive="active">Politica de Tratamiento de Datos</p>
+                            </mat-list-item>
+                        </mat-list>
+                    </mat-panel-description>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+        <div #politica class="border" fxFlex="100" fxFlex.xs="100" fxFlex.gt-md="73">
+            <div fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap.gt-xs="30px">
+                <div fxFlex="100" fxFlex.xs="100" fxFlex.gt-md="100">
+                    <div class="titulo-catalogo">
+                        <mat-toolbar>
+                            <span>COMO COMPRAR</span>
+                        </mat-toolbar>
+                    </div>
+                    <br>
+                    <br>
+                    <ul>
+                        <li>
+                            <b>1.</b> Ingrese al catálogo del menú <b>Productos > Catálogo</b>
+                        </li>
+                        <br>
+                        <li>
+                            <b>2.</b> Encuentre el producto de interés. Si tiene su elección de producto agréguelo a su carrito de compras en la cual lo puedes lograr de 3 formas:
+                        </li>
+                        <br>
+                        <li>
+                            <b>2.1.</b> Página de inicio.
+                            <p>En el inicio de la pagina encontraras el campo de productos donde se visualizarán los ítems recientes en la tienda y podrás dar clic al icono <img src="../../../assets/images/carrito.JPG">Como medio directo del producto especificado
+                                en primer plano. </p>
+                        </li>
+                        <br>
+                        <img class="img" src="../../../assets/images/slider-productos.JPG">
+                        <br>
+                        <li>
+                            <b>2.2.</b> Encuentre el producto de interés. Si tiene su elección de producto agréguelo a su carrito de compras en la cual lo puedes lograr de 3 formas:
+                        </li>
+                        <br>
+                        <img class="img" src="../../../assets/images/catalogo-productos.JPG">
+                        <br>
+                        <li>
+                            <b>2.3</b> Desde la vista del Producto:
+                            <p>En el catalogo se visualizara un boton en cada producto <b>VER PRODUCTO</b> el cual lo redirije a la vista completa del producto en el cual podremos encontrar varios roductos en 1. Podras seleccionar el producto de preferencia.
+                                Asi mismo añadir una catidad que requieras al carrito.</p>
+                        </li>
+                        <br>
+                        <img class="img" src="../../../assets/images/producto1.jpg">
+                        <br>
+                        <img class="img" src="../../../assets/images/producto2.jpg" alt="">
+                        <br>
+                        <li>
+                            <b>3.</b> Cuando ya decidas terminar la compra y proceder al pago nos dirigimos al icono del <b>CARRITO</b> del menú ingresar y te mostrar el listado de productos agregados recientemente con sus respectivas cantidades y precios.
+                        </li>
+                        <br>
+                        <img class="img" src="../../../assets/images/carrito1.JPG">
+                        <br>
+                        <li>
+                            <b>4.</b> Para finalizar la compra debes estar registrado en nuestra pagina y completar los datos que encontraras en el botón <b>MI CUENTA</b> y se habilitara el botón finalizar compra.
+                        </li>
+                        <br>
+                        <img class="img" src="../../../assets/images/carrito2.JPG">
+                        <br>
+                        <li>
+                            <b>5.</b> Luego serás enviado a la plataforma de pago en donde deberá ingresar sus datos personales y elegir su medio de pago.
+                        </li>
+                        <br>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,514 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$conectaconfront-primary: mat-palette($mat-indigo);
+$conectaconfront-accent: mat-palette($mat-pink, A200, A100, A400);
+// The warn palette is optional (defaults to red).
+$conectaconfront-warn: mat-palette($mat-red);
+// Create the theme object (a Sass map containing all of the palettes).
+$conectaconfront-theme: mat-light-theme($conectaconfront-primary, $conectaconfront-accent, $conectaconfront-warn);
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($conectaconfront-theme);
+@import '~animate.css/animate.min';
+
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+    height: 100%;
+    font-family: 'Bai Jamjuree', sans-serif !important;
+}
+
+label {
+    font-family: 'Bai Jamjuree', sans-serif !important;
+}
+
+input {
+    font-family: 'Bai Jamjuree', sans-serif !important;
+}
+
+a {
+    text-decoration: none;
+    font-family: 'Michroma', sans-serif !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    margin: 0 0 !important;
+    font-family: 'Michroma', sans-serif;
+    letter-spacing: 1px;
+    text-rendering: optimizelegibility;
+}
+
+@media(max-width:1280px) {
+  h1 {
+    font-size: 1.3rem;
+  }
+  h2 {
+    font-size: 1.2rem;
+  }
+  h3 {
+    font-size: 1.1rem;
+  }
+  h4 {
+    font-size: 1rem;
+  }
+  h5{
+    font-size: .9rem;
+  }
+}
+
+.mat-card-title {
+    font-family: 'Michroma', sans-serif;
+    font-size: 14px !important
+}
+
+.mat-button {
+    font-family: 'Michroma', sans-serif;
+    font-size: .7rem;
+    letter-spacing: .5px;
+}
+
+.mat-badge-content {
+    font-size: .7rem;
+}
+
+.mat-expansion-panel-header {
+    font-family: 'Michroma', sans-serif;
+}
+
+.mat-toolbar {
+    font-family: 'Michroma', sans-serif;
+    span {
+        font-family: 'Michroma', sans-serif;
+    }
+}
+
+.mat-menu-panel {
+    .mat-menu-item {
+        font-size: .8rem !important
+    }
+    b {
+        font-weight: lighter !important;
+    }
+}
+
+.mat-list-item{
+  font-family: 'Bai Jamjuree', sans-serif !important;
+}
+
+p {
+    margin: 0 0;
+    font-family: 'Bai Jamjuree', sans-serif !important;
+}
+
+.mat-card-content {
+    font-family: 'Bai Jamjuree', sans-serif !important;
+}
+
+ul {
+    margin: 0 0;
+    list-style: none;
+    padding: 0 0;
+    font-family: 'Bai Jamjuree', sans-serif !important;
+}
+
+body {
+    margin: 0;
+    font-family: 'Bai Jamjuree', sans-serif !important;
+}
+
+.mat-option {
+    a {
+        font-family: 'Bai Jamjuree', sans-serif !important;
+    }
+}
+
+.mat-drawer-content {
+    overflow: inherit !important;
+}
+
+.container {
+    width: 100%;
+    @media(min-width: 991px) {
+        max-width: 1320px;
+        margin: auto
+    }
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.divider-title {
+    border-top-width: 4px !important;
+    margin-bottom: 30px !important;
+    border-radius: 8px;
+    background-color: #008332;
+}
+
+ngu-carousel {
+    position: relative;
+    z-index: 10;
+}
+
+.reset-input {
+    margin-top: -8px;
+    outline: none !important;
+    .mat-form-field-wrapper {
+        margin-bottom: 0px !important;
+        padding-bottom: 0px !important;
+        outline: none;
+        mat-form-field-flex {
+            outline: none;
+        }
+        .mat-form-field-infix {
+            border-top: 0em !important;
+            padding: .5em 0 .5em 0 !important;
+        }
+        .mat-icon {
+            font-size: 100% !important;
+        }
+    }
+    &.mat-focused {
+        margin: 0 0 0 0 !important;
+        .mat-form-field-label {
+            margin-top: 10px;
+        }
+    }
+}
+
+.image-arrow {
+    width: 44%;
+    height: 43px;
+    position: relative;
+    overflow: hidden;
+    text-align: inherit;
+}
+
+.tile {
+    box-shadow: none !important;
+}
+
+.space-bottom {
+    padding-bottom: 60px;
+}
+
+.search-style {
+    &.mat-form-field-appearance-outline .mat-form-field-label {
+        top: 2.2em !important;
+        font-size: 1rem !important;
+        margin-top: none !important;
+    }
+    &.mat-form-field-appearance-outline .mat-form-field-outline {
+        color: rgba(255, 255, 255, .5);
+    }
+    &.mat-form-field-should-float {
+        .mat-form-field-label-wrapper {
+            top: -0.3em !important;
+        }
+    }
+    &.mat-form-field-should-float.mat-focused {
+        .mat-form-field-label-wrapper {
+            top: -1em !important;
+        }
+    }
+    input {
+        font-size: 1rem !important;
+    }
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    //overflow: hidden;
+    z-index: 100;
+    width: 100%;
+    height: 64px !important;
+    max-height: 64px !important;
+    min-height: 64px !important;
+    @media(max-width: 599px) {
+        height: 56px !important;
+        max-height: 56px !important;
+        min-height: 56px !important;
+    }
+    .top-menu {
+        margin: 0 0 0 0 !important;
+        li {
+            a {
+                line-height: 63.5px !important;
+            }
+            button {
+                display: inline-block !important
+            }
+        }
+    }
+    .logo {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    .float-address {
+        top: 74px !important;
+        @media(max-width: 1279px) {
+            top: 78px !important;
+        }
+        @media(max-width: 599px) {
+            top: 60px !important;
+        }
+    }
+}
+
+.reset-color {
+    background-color: transparent !important;
+}
+
+.white-icon {
+    svg g path {
+        color: black !important;
+        fill: rgb(0, 0, 0) !important;
+    }
+}
+
+.banner-interno {
+    min-height: 150px;
+    width: 100%;
+    padding: 0 30px;
+    margin-bottom: 20px;
+    background-image: url('/assets/banner/fondo1.jpg');
+    h1 {
+        color: #d6d227;
+        padding: 0 40px !important;
+    }
+}
+
+.border-btn {
+    border: 1px solid #008332 !important
+}
+
+.example-card {
+    mat-card-actions {
+        margin-top: 20px;
+        button {
+            margin-right: 0px !important;
+        }
+    }
+}
+
+.filters-left {
+    margin-bottom: 20px !important;
+    .mat-expansion-panel-header {
+        border-bottom: 1px solid rgba(0, 0, 0, .1) !important;
+        border-radius: 0 !important;
+        &[aria-disabled=true] {
+            color: rgb(0, 0, 0) !important;
+            font-weight: bold !important;
+        }
+        @media(max-width: 1279px) {
+            border-bottom: none!important;
+            border-radius: inherit !important;
+        }
+    }
+    .mat-list-item {
+        p {
+            font-size: .9rem !important;
+        }
+    }
+}
+
+.quantity {
+    margin: 0 0 0 0 !important;
+    .mat-form-field-wrapper {
+        margin: 0em 0 0 0 !important;
+        padding-bottom: 0 !important;
+    }
+}
+
+.redes-detail {
+    a {
+        background-color: transparent !important;
+        box-shadow: none !important;
+        .mat-button-wrapper {
+            padding: 7px 9px !important;
+        }
+        .mat-icon {
+            width: 34px !important;
+            height: 34px !important;
+        }
+        @media(max-width:599px) {
+            width: 30px;
+            height: 30px;
+            line-height: 25px;
+            .mat-icon {
+                width: 24px !important;
+                height: 24px !important;
+            }
+            .mat-button-wrapper {
+                padding: 0 0 !important;
+            }
+        }
+    }
+    a:nth-child(1) .mat-icon svg g path {
+        fill: #3b5998 !important;
+    }
+    a:nth-child(2) .mat-icon svg g path {
+        fill: #C13584 !important;
+    }
+}
+
+.detail-product {
+    .mat-card-header-text {
+        margin: 0 0 0 0 !important
+    }
+}
+
+.card-product {
+    .mat-card-header {
+        .mat-card-header-text {
+            width: 100% !important;
+            margin: 0 0 !important;
+            .mat-card-title {
+                white-space: nowrap !important;
+                text-overflow: ellipsis !important;
+                width: 100% !important;
+                overflow: hidden !important;
+                display: inline-block !important;
+            }
+        }
+    }
+}
+
+.table-pedido {
+    .mat-form-field-wrapper {
+        padding-bottom: 0em !important;
+    }
+    button {
+        background-color: transparent !important;
+        box-shadow: none !important;
+        .mat-icon {
+            color: #333 !important
+        }
+    }
+}
+
+.tab-qs .mat-tab-body {
+    min-height: 150px !important;
+    box-sizing: border-box !important;
+}
+
+.tab-qs .mat-tab-labels {
+    display: block !important;
+}
+
+.tab-qs .mat-tab-group[mat-stretch-tabs]>.map-tab-header .mat-tab-labels {
+    min-width: 0px !important;
+}
+
+#whatsapp {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 100;
+    img {
+        width: 50px;
+    }
+}
+
+.white-border {
+    border: 1px solid rgba(255, 255, 255, .2) !important;
+    color: rgba(255, 255, 255, .2) !important;
+}
+
+.red-snackbar {
+    background-color: rgb(153, 50, 50);
+    color: lightgoldenrodyellow;
+}
+
+.code-list {
+    .mat-chip-list-wrapper {
+        padding: 0 16px !important;
+        box-sizing: border-box !important;
+    }
+}
+
+.filter-left-menu {
+    .mat-expansion-panel-body {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+    }
+}
+
+.open-banner {
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: center center !important;
+    background-attachment: fixed !important;
+    min-height: 400px !important;
+    position: relative;
+    .full-content {
+        width: 100%;
+        margin-bottom: 10px;
+        text-align: justify !important;
+    }
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, .5);
+        z-index: 0;
+    }
+    .container {
+        position: relative;
+    }
+    .mat-toolbar {
+        z-index: 1;
+        background-color: rgba(26, 33, 29, .9);
+        h1 {
+            font-size: 1.2rem !important;
+            padding: 0 0 !important
+        }
+        .author {
+            color: #fff !important;
+            span {
+                font-size: .8rem !important
+            }
+        }
+    }
+}
+
+.padding-texto {
+    padding: 20px 0 !important
+}
+
+.content-noticia {
+    img {
+        display: none !important;
+    }
+}
+
+@media(max-width:960px) {
+  table.mat-table td.mat-cell {
+    .mat-form-field-appearance-outline .mat-form-field-infix{
+      padding: .2em 0 .2em 0 !important;
+      font-size: 16px !important;
+      input{
+        text-align: right !important;
+      }
+    }
+  }
+}

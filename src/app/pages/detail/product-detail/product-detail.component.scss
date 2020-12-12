@@ -1,0 +1,82 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css"; // your theme
+.mat-sidenav-container,
+.mat-sidenav-content,
+.mat-tab-body-content {
+    transform: none !important;
+}
+
+.content-detail-product {
+    padding: 25px 0;
+}
+
+.detail-product {
+    .mat-list {
+        margin: 20px 0 !important
+    }
+    .mat-card-header {
+        border-bottom: 1px solid rgba(0, 0, 0, .1);
+        .mat-card-title {
+            @media(max-width: 599px) {
+                font-size: 1rem !important;
+            }
+        }
+        .mat-card-subtitle {
+            @media(max-width: 599px) {
+                font-size: .8rem !important;
+            }
+        }
+    }
+    .mat-card-footer,
+    .mat-card-actions {
+        padding: 20px 30px;
+    }
+    .mat-card-footer {
+        border-top: 1px solid rgba(0, 0, 0, .1);
+    }
+    .mat-chip-list {
+        margin-top: 10px;
+        .mat-chip {
+            font-size: .7rem !important;
+        }
+    }
+}
+
+.price {
+    padding: 10px 15px;
+    h3 {
+        font-size: 1.4rem !important;
+        margin: 0 0 !important;
+        @media(max-width: 599px) {
+            font-size: 1rem !important;
+        }
+    }
+}
+
+.total {
+    h3 {
+        font-size: 1.4rem !important;
+    }
+    @media(max-width:599px) {
+        margin-top: 20px;
+    }
+}
+
+.item-detail {
+    .mat-icon {
+        display: none;
+        color: #008332
+    }
+    &.router-link-active {
+        cursor: not-allowed;
+        pointer-events: none;
+        .mat-icon {
+            display: block
+        }
+    }
+}
+
+.disabledLink {
+    color: rgba(0, 0, 0, .2) !important;
+    pointer-events: none;
+    cursor: not-allowed;
+}

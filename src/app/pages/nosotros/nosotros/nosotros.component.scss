@@ -1,0 +1,34 @@
+    .image {
+        background-color: #77B321;
+        min-height: 150px;
+        @media (min-width: 1280px) {
+            min-height: 250px;
+            img {
+                width: 150px;
+            }
+        }
+        @media (max-width: 1279px) {
+            img {
+                width: 100px;
+            }
+        }
+    }
+    
+    .txt {
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    
+    .img-radius {
+        width: 100px !important;
+        height: 100px !important;
+        border-radius: 70px;
+        padding: 10px;
+        background-size: cover;
+        background-position: center center;
+        transition: 0.35s cubic-bezier(0.25, 0.1, 0, 2.05);
+        filter: grayscale(100%);
+        &:hover {
+            transform: scale(1.1);
+        }
+    }

@@ -1,0 +1,31 @@
+<div class="content-carrusel-home" fxLayout="column" fxLayoutAlign="center center">
+  <mat-spinner color="light" *ngIf="bannerHom == undefined" diameter="30"></mat-spinner>
+  <ngu-carousel #myCarousel *ngIf="bannerHom !== undefined" class="carousel-home animated fadeIn faster" [inputs]="carouselTile" [dataSource]="bannerHom">
+      <ngu-tile *nguCarouselDef="let item; let i = index">
+          <div class="tile" [ngStyle]="{'background-image':'url('+urlPub+item.imagenfondo +')'}">
+              <div class="container">
+                  <div style="min-height: 500px;width:100%;padding:0 30px" [fxLayout.gt-sm]="valueOrder == 3 ? 'column':'row'" fxLayout="column" fxLayoutAlign="center center" fxLayoutAlign.gt-sm="space-between center">
+                      <div fxFlex="50" fxLayout.sm="column" fxLayout.xs="column" [fxFlexOrder]="item.orientacion == 'izquierda' ? '1':'2'" fxLayoutAlign.sm="center center" fxLayoutAlign.xs="center center">
+                          <h3>{{item.titulo}}</h3>
+                          <h4>{{item.subtitulo}}</h4>
+                          <br/><br/>
+                          <a *ngIf="item.link" mat-button [routerLink]="item.link">Ver producto</a>
+                      </div>
+                      <div fxFlex="50" [fxFlexOrder]="item.orientacion == 'izquierda' ? '2':'1'" [fxLayoutAlign]="item.orientacion == 'izquierda' ? '':'center center'">
+                        <img [src]="urlPub+item.imagenfrontal" [alt]="item.titulo">
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </ngu-tile>
+      <button mat-button NguCarouselPrev class="leftRs">
+          <mat-icon>keyboard_arrow_left</mat-icon>
+      </button>
+      <button mat-button NguCarouselNext class="rightRs">
+          <mat-icon>keyboard_arrow_right</mat-icon>
+      </button>
+      <!-- <ul class="myPoint" NguCarouselPoint>
+          <li *ngFor="let i of myCarousel.pointNumbers; let i = index" [class.active]="i==myCarousel.activePoint" (click)="myCarousel.moveTo(i)" [style.background]="'url(' + carouselTileItems[i] + ')'"></li>
+      </ul>-->
+  </ngu-carousel>
+</div>

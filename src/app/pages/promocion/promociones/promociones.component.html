@@ -1,0 +1,51 @@
+<div class="banner-interno" fxLayout.gt-sm="row" fxLayout="column" fxLayoutAlign="center center" fxLayoutAlign.gt-sm="space-between center">
+    <div class="container">
+        <div fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign.sm="center center" fxLayoutAlign.xs="center center">
+            <h1>PRODUCTOS EN PROMOCION</h1>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div fxLayout="row wrap" fxLayoutAlign="center start" fxLayoutGap.gt-md="2%">
+        <div fxFlex="98" fxFlex.gt-md="23" class="filters-left">
+            <mat-accordion>
+                <mat-expansion-panel [expanded]="expand" [disabled]="expand" #mep="matExpansionPanel" class="filter-left-menu">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                          <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="15px">
+                            <mat-spinner *ngIf="showLoadCat" diameter="20"></mat-spinner> <span>CATEGORIAS</span>
+                          </div>
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <mat-panel-description class="links-items">
+                        <mat-action-list>
+                            <button mat-list-item class="animated fadeInDown faster" matRipple *ngIf="showBackFilter" (click)="mep.expanded = this.hideExp; getAllProductsPromo()">
+                              <mat-icon mat-list-icon>first_page</mat-icon>
+                              <p mat-line>MOSTRAR TODOS</p>
+                            </button>
+                            <mat-divider class="animated zoomIn fast" *ngIf="showBackFilter"></mat-divider>
+                            <button mat-list-item class="animated fadeInUp fast" matRipple *ngFor="let rama of ramas" (click)="mep.expanded = this.hideExp; filterListProd(rama.nombre)">
+                                <p mat-line>{{rama.nombre | uppercase}}</p>
+                            </button>
+                        </mat-action-list>
+                    </mat-panel-description>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+
+        <div fxFlex="98" fxFlex.gt-md="73">
+            <div class="titulo-catalogo">
+                <mat-toolbar fxLayoutGap="10px">
+                    <mat-spinner *ngIf="showLoad" diameter="20"></mat-spinner> <span>PROMOCIONALES</span>
+                </mat-toolbar>
+            </div>
+            <br/>
+
+            <div fxLayout="row wrap" fxLayoutGap="1%" fxLayoutGap.gt-md="2%" fxLayoutAlign="center center" fxLayoutAlign.gt-md="start center">
+                <ng-container *ngFor="let producto of allProductsPromo">
+                    <app-productmin class="animated zoomIn fast" [data]="producto" fxFlex.xs="100" fxFlex.gt-xs="48" fxFlex.gt-md="31.3"></app-productmin>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+</div>

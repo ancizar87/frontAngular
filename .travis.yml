@@ -1,12 +1,13 @@
-dist: trusty
-sudo: false
-
 language: node_js
 node_js:
-  - "12.14.1"
+  - "12"
+
+branches:
+  only:
+    - master
 
 install:
-  - npm install
+  - npm install -g @angular/cli
 
 script:
-  - npm run-script-build
+  - ng build --prod --aot

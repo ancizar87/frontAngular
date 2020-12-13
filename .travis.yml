@@ -2,7 +2,8 @@ language: node_js
 node_js:
   - "12.14.1"
 dist: trusty
-sudo: false
+
+sudo: apt-get update
 branches:
   only:
   - master
@@ -10,4 +11,4 @@ before_script:
   - npm install -g @angular/cli
 script:
 - ng lint
-- ng build --prod 
+- ng build --prod

@@ -33,6 +33,7 @@
         "ngx-infinite-scroll": "^8.0.2",
         "ngx-light-carousel": "^1.1.10",
         "rxjs": "~6.4.0",
+        "travis": "^0.1.1",
         "tslib": "^1.14.1",
         "zone.js": "~0.9.1"
     },

@@ -12,3 +12,4 @@ install:
 script:
   - npm install
   - npm run build
+  - npm test
